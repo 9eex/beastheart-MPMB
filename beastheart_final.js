@@ -40,7 +40,7 @@ SourceList["BHMC"] = {
 /* -------------------------------------------------------------------------
    Beastheart Companion Global Helpers
    ------------------------------------------------------------------------- */
-  
+  // Dragon Wyrmling Helper
   
    // Create Beastheart Companion function
     var createBeastheartCompanion = function (bhcomp) {
