@@ -446,7 +446,7 @@ SourceList["BHMC"] = {
             comp3rdLevelTraitName : "Owlie Oop (5 Ferocity)",
             comp3rdLevelTraitDesc : "Owlbear leaps up to 20ft without\n  provoking opportunity attacks. When it lands, each\n  creature within 5ft must make a Str save or be knocked\n  prone.",
             comp5thLevelTraitName : "Bear Hug (8 Ferocity)",
-            comp5thLevelTraitDesc : "Owlbear tries to grab and\n  crush a target within 5ft. Target must make Dex save or\n  take PBd10 bludgeoning damage and is grappled and\n  restrained. If target saves, they take half damage and are\n  not grappled or restrained,",
+            comp5thLevelTraitDesc : "Owlbear tries to grab and crush a\n  target within 5ft. Target must make Dex save or take\n  PBd10 bludgeoning damage and is grappled and\n  restrained. If target saves, they take half damage and are\n  not grappled or restrained,",
             compDescription : "is a monstrous cross between giant owl and bear, an owlbear's reputation for\n   ferocity and aggression makes it one of the most feared predators of the wild.",
             compBaseTraitName : "Give a Hoot (1/Long Rest)",
             compBaseTraitDesc : "Owlbear hoots a unique\n  battlecry. If I am able to hear it, I gain 5 x PB temporary\n  hit points.",
@@ -469,18 +469,18 @@ SourceList["BHMC"] = {
             compPP : 11,
             compSenses : "Darkvision 60ft",
             compLangs : "",
-            compSigAttackName : "Corruption Cough",
+            compSigAttackName : "Cough",
             compSigDamageType : "acid",
             compAttackAbility : 2,
             comp1stLevelTraitName : "Destabilizing Attack (2 Ferocity)",
-            comp1stLevelTraitDesc : "Make a signature attack.\n  On hit, target has disadvantage on next attack roll\n  they make before the start of Sporeling's next turn.",
+            comp1stLevelTraitDesc : "Make a signature\n  attack. On hit, target has disadvantage on next attack roll\n  they make before the start of Sporeling's next turn.",
             comp3rdLevelTraitName : "Spore Burst (5 Ferocity)",
-            comp3rdLevelTraitDesc : "All creatures of choice within 5ft of\n  Sporeling, must make a Con save or become\n  poisoned until the start of Sporeling's next turn.",
+            comp3rdLevelTraitDesc : "All creatures of choice within 5ft\n  of Sporeling, must make a Con save or become poisoned\n  until the start of Sporeling's next turn.",
             comp5thLevelTraitName : "Hallucinogenic Spores (8 Ferocity)",
-            comp5thLevelTraitDesc : "Each enemy within 10ft\n  must make a Con save. On a failure, Sporeling chooses\n  whether the target creature uses their reaction\n  make a melee attack against a creature of Sporeling's\n  choice or fall prone",
+            comp5thLevelTraitDesc : "Each enemy within\n  10ft  must make a Con save. On a failure, Sporeling\n  chooses whether the target creature uses their reaction\n  make a melee attack against a creature of Sporeling's\n  choice or fall prone",
             compDescription : "is a halfling-sized mushroom with two arms, four legs, and a face growing\n   out of their stalk underneath a brightly colored cap.",
             compBaseTraitName : "Invigorating Spores (1/Long Rest)",
-            compBaseTraitDesc : "While I am within 30ft\n  of sporeling, Sporeling can use a bonus action to give\n  me advantage on saving throws for 1 minute.",
+            compBaseTraitDesc : "While I am within 30ft\n  of Sporeling, it can use a bonus action to give me\n  advantage on saving throws for 1 minute.",
             compBaseFeatureName : "False Appearance",
             compBaseFeatureDesc : "If Sporeling remains\n  still, it is indistinguishable from an\n  ordinary fungus.",
         },
@@ -506,14 +506,14 @@ SourceList["BHMC"] = {
             compSigDamageType : "piercing",
             compAttackAbility : 2,
             comp1stLevelTraitName : "Overwhelming Attack (2 Ferocity)",
-            comp1stLevelTraitDesc : "Make a signature\n  attack. On hit, deal extra PB damage\n  and target cannot take reactions until the start of\n  Worg's next turn.",
+            comp1stLevelTraitDesc : "Make a signature\n  attack. On hit, deal extra PB damage and target cannot take\n  reactions until the start of Worg's next turn.",
             comp3rdLevelTraitName : "Brutal Charge (5 Ferocity)",
             comp3rdLevelTraitDesc : "Worg can use its action\n  to move up to its speed without provoking opportunity\n  attacks and can make one signature attack against a\n  single target during or at the end of its move.",
             comp5thLevelTraitName : "Bite Frenzy (8 Ferocity)",
             comp5thLevelTraitDesc : "Make signature attack against a\n  number of creatures of your choice equal to your PB\n  within 5ft of Worg. On hit, the target is knocked prone.",
-            compDescription : "is a monstrous wolf-like predator that delights in hunting\n  and devouring creatures weaker than itself.",
+            compDescription : "is a monstrous wolf-like predator that delights in hunting and devouring\n  creatures weaker than itself.",
             compBaseTraitName : "Move As One",
-            compBaseTraitDesc : "If I am mounted on Worg,\n  opportunity attacks against me or Worg are made with disadvantage.\n  I can mount or dismount Worg by spending 5ft of movement.",
+            compBaseTraitDesc : "If I am mounted on Worg, opportunity\n  attacks against me or Worg are made with disadvantage.\n  I can mount or dismount Worg by spending 5ft of\n  movement.",
         },
     };
     // Set up variables
@@ -561,7 +561,7 @@ SourceList["BHMC"] = {
             modifiers: ["", "+oProf"]
             },
             {
-            name : "Signature Attack (Tier 2)",
+            name : "Signature Attack  (Tier 2)",
             ability : type.compAttackAbility || 1,
             damage : [2, 6, type.compSigDamageType || "piercing"],
             range : "Melee (5 ft)",
@@ -660,7 +660,7 @@ SourceList["BHMC"] = {
             },
             {
             name : "Ferocity",
-            description : "At the start of " + type.compName + "'s\n  turn, it gains 1d4 Ferocity and gain an\n  extra +1 for each creature it can see and gain an extra +1 at levels 6, 10, and 15.",
+            description : "At the start of " + type.compName + "'s\n  turn, it gains 1d4 Ferocity and gain an\n  extra +1 for each creature it can see and\n  gain an extra +1 at levels 6, 10, and 15.",
             }
         ],
         traits: [{
@@ -763,7 +763,7 @@ var wisMod = Math.max(compWisMod, charWisMod);
             var exploitDC = 8 + wisMod + PB;
 
             var dcText =
-                "DC for Signature Attack Effects = " + abilityDC + " | " +
+                "DC for Ferocity Attacks = " + abilityDC + " | " +
                 "DC for Primal Exploits = " + exploitDC;
 
             // This field definitely exists
