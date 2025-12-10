@@ -36,7 +36,7 @@ SourceList["BHMC"] = {
    Custom Class & Companion Add-On for MPMB Character Sheet
    --------------------------------------------------------
 */ 
-
+var BeastheartCompanionKey = "";
 /* -------------------------------------------------------------------------
    Beastheart Companion Global Helper
    ------------------------------------------------------------------------- */
@@ -141,6 +141,10 @@ SourceList["BHMC"] = {
             compDescription : "is a multilegged, reptilian horror whose deadly gaze transforms victims into stone.",
             compBaseTraitName : "Heavy Glare",
             compBaseTraitDesc : "When I hit a target that the basilisk\n  can see, the target must make a Con save or it can't\n  make opportunity attacks and its speed is reduced by\n  10ft until the start of its next turn.",
+            compMysticConn : "You cover your skin in a flexible layer of stone for 10 minutes. You gain resistance to bludgeoning, piercing, and slashing damage.",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'blood hawk': {
             compName : "Blood Hawk",
@@ -173,7 +177,11 @@ SourceList["BHMC"] = {
             compBaseTraitName : "Swoop In (Reaction: 1/Long Rest)",
             compBaseTraitDesc : "If I am within 30ft of\n  hawk and get hit by an attack, the hawk can fly to me\n  without provoking opportunity attacks. If it ends its\n  move within 5ft of me, it takes the hit instead, but only\n  takes half damage.",
             compBaseFeatureName : "",
-            compBaseFeatureDesc : ""
+            compBaseFeatureDesc : "",
+            compMysticConn : "You gain a flying speed equal to your walking speed for 1 hour.",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'bulette': {
             compName : "Bulette",
@@ -206,7 +214,11 @@ SourceList["BHMC"] = {
             compBaseTraitName : "Plated Protection",
             compBaseTraitDesc : "I can ride the bulette while it is\n  burrowing.",
             compBaseFeatureName : "",
-            compBaseFeatureDesc : ""
+            compBaseFeatureDesc : "",
+            compMysticConn : "You gain a burrowing speed equal to your walking speed for 10 minutes.",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "short or long rest"
         },
         'deinonychus': {
             compName : "Deinonychus",
@@ -240,7 +252,11 @@ SourceList["BHMC"] = {
             compBaseTraitName : "Part of the Pack (1/Long Rest)",
             compBaseTraitDesc : "If I am charmed, stunned,\n  or frightened, and within 5ft of deinonychus, it can end\n  one of those conditions.",
             compBaseFeatureName : "",
-            compBaseFeatureDesc : ""
+            compBaseFeatureDesc : "",
+            compMysticConn : "You can take the Hide action as a bonus action",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "Wis mod",
+            compMysticConnPer : "long rest"
         },
         'dragon wyrmling': {
             compSize : 3,
@@ -268,6 +284,9 @@ SourceList["BHMC"] = {
             comp5thLevelTraitDesc : "",
             compDescription : "is little more than a baby, barely able to speak. However, they can\n   present a clear threat to any would-be predator.",
             compBaseFeatureName : "Shared Resistance",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'earth elemental': {
             compName : "Earth Elemental",
@@ -300,7 +319,11 @@ SourceList["BHMC"] = {
             compBaseTraitName : "Toss Me",
             compBaseTraitDesc : "If I am within 5ft, elemental can hurl me 5ft x\n  PB in any direction (including up). If I would normally\n  take damage from landing, they can make a DC15 Dex\n  save to take none.",
             compBaseFeatureName : "Earth Glide",
-            compBaseFeatureDesc : "The elemental can burrow\n  through nonmagical, unworked earth and\n  stone and doesn't disturb the material it\n  moves through. While using Earth Glide,\n the elemental can't be used as a mount."
+            compBaseFeatureDesc : "The elemental can burrow\n  through nonmagical, unworked earth and\n  stone and doesn't disturb the material it\n  moves through. While using Earth Glide,\n the elemental can't be used as a mount.",
+            compMysticConn : "You can transform your body into dirt and stone for 10 minutes. While transformed, you can pass through non-magical objects made of earth and stone. If you end your turn inside an object, you take 1d10 force damage and are shunted back to the space which you entered the object.",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'gelatinous cube': {
             compName : "Gelatinous Cube",
@@ -334,6 +357,10 @@ SourceList["BHMC"] = {
             compBaseFeatureDesc : "I can enter and move\n  through the cube's space without\n  restriction or being engulfed and can\n  attack or interact with any engulfed\n  creature without taking damage from or\n  dealing damage to the cube.",
             compBaseFeature2Name : "Transparent",
             compBaseFeature2Desc : "When cube is in plain sight\n  and has not moved or attacked it can\n  only be spotted with a successful Wis\n  (Perception) check. Any unaware creature\n  that moves into the cube's space takes\n  1d6 acid damage and doesn't enter\n  cube's space.",
+            compMysticConn : "Your body becomes flexible and gelatinous for 10 minutes. While transformed, as a bonus action, you can absorb or excrete a tiny object into or out of your body. You can store up to 4 objects in this way. Also, when a creature within 5ft hits you with a melee attack, you can use your reaction to deal 3d6 acid damage to the attacker.",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'giant toad': {
             compName : "Giant Toad",
@@ -358,18 +385,19 @@ SourceList["BHMC"] = {
             compSigDamageType : "bludgeoning",
             compAttackAbility : 2,
             comp1stLevelTraitName : "Stretch Attack [2 Ferocity]",
-            comp1stLevelTraitDesc : "Make a signature attack with a\n  reach of 10ft. Attack deals PB extra damage and\n  target is pulled 5ft toward toad.",
+            comp1stLevelTraitDesc : "Make a signature attack with\n a  reach of 10ft. Attack deals PB extra damage and\n  target is pulled 5ft toward toad.",
             comp3rdLevelTraitName : "Fast Food [5 Ferocity]",
             comp3rdLevelTraitDesc : "Make a signature attack. After \n  attacking, toad can jump 20ft in any direction\n without provoking opportunity attacks. If the target is\n  large or smaller, toad drags target with them",
             comp5thLevelTraitName : "Swallow [8 Ferocity]",
-            comp5thLevelTraitDesc : "Toad tries to swallow a medium or smaller target within 5ft. Target must make a Dex save or take PBd6 bludgeoning damage and is swallowed. Success means target takes half damage and isn't swallowed. Swallowed targets are blinded and restrained, have total cover against attacks and effect outside of the toad and take PBd6 acid damage at the start of toad's turn. If toad takes damage it must make a con save equal to 10 or half the damage (whichever is higher). If toad dies or is incapacitated, swallowed target is no longer restrained and can exit the toad using 5ft of movement. Toad can only swallow 1 target at a time.",
-            compDescription : "can be as large as a horse or even a small house, its bumpy skin glistening with moisture.",
+            comp5thLevelTraitDesc : "Toad tries to swallow a medium or\n  smaller target within 5ft. Target must make a Dex save or\n  take PBd6 bludgeoning damage and is swallowed.\n  Success means target takes half damage and isn't\n  swallowed. Swallowed targets are blinded and restrained,\n  have total cover against attacks and effect outside of the\n  toad and take PBd6 acid damage at the start of toad's\n  turn. If toad takes damage it must make a con save equal\n  to 10 or half the damage (whichever is higher). If toad\n  dies or is incapacitated, swallowed target is no longer\n  restrained and can exit the toad using 5ft of movement.\n  Toad can only swallow 1 target at a time.",
+            compDescription : "can be as large as a horse or even a small house, its bumpy skin glistening with\n   moisture.",
             compBaseTraitName : "Psychedelic Skin (1/Long Rest)",
-            compBaseTraitDesc : "If I am within 5ft of toad, as \n  a bonus action, it can coat my weapon with poison secreted from the toad's skin, which lasts for one hour or until I hit a creature with my weapon. When I hit a creature with my weapon, it must make a Con save or be poisoned for 1 minute. the creature can repeat the save at the end of their turn to end the effect.",
+            compBaseTraitDesc : "If I am within 5ft of toad,\n  as a bonus action, it can coat my weapon with poison\n  secreted from the toad's skin, which lasts for one hour or\n  until I hit a creature with my weapon. When I hit a\n  creature with my weapon, it must make a Con save or be\n  poisoned for 1 minute. the creature can repeat the save\n  at the end of their turn to end the effect.",
             compBaseFeatureName : "Amphibious",
-            compBaseFeatureDesc : "Toads can breathe both air and water.",
+            compBaseFeatureDesc : "Toads can breathe both air\n  and water.",
             compBaseFeature2Name : "Standing Leap",
-            compBaseFeature2Desc : "Toad can leap up to 20ft long or 10ft high without a running start.",
+            compBaseFeature2Desc : "Toad can leap up to 20ft\n  long or 10ft high without a running start.",
+            compMysticConn : "You can can hold your breath for up to 1 hour and gain a swim speed equal to your walking speed. Additionally, you make high and long jumps as if you had a running start.",
         },
         'giant spider': {
             compName : "Giant Spider",
@@ -406,7 +434,8 @@ SourceList["BHMC"] = {
             compBaseFeature2Name : "Web Sense",
             compBaseFeature2Desc : "Spider knows the exact\n  location of any creature touching the\n  same web.",
             compBaseFeature3Name : "Web Walker",
-            compBaseFeature3Desc : "Ignore any movement\n  restrictions caused by webs."
+            compBaseFeature3Desc : "Ignore any movement\n  restrictions caused by webs.",
+            compMysticConn : "You have advantage on initiative rolls and can't be surprised while you are not incapacitated.",
         },
         'giant weasel': {
             compName : "Giant Weasel",
@@ -441,7 +470,11 @@ SourceList["BHMC"] = {
             compBaseTraitName : "",
             compBaseTraitDesc : "",
             compBaseFeatureName : "Treasure Sense",
-            compBaseFeatureDesc : "Can detect gems and\n  precious metals within 10ft."
+            compBaseFeatureDesc : "Can detect gems and\n  precious metals within 10ft.",
+            compMysticConn : "as a bonus action, your teeth become pointed. For 1 minute, you can make bite attacks against targets within 5ft as a bonus action. Your bite is a natural weapon that uses either Str or Dex for attack and damage rolls and deals 1d10 piercing damage.",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'hell hound': {
             compName : "Hell Hound",
@@ -474,7 +507,11 @@ SourceList["BHMC"] = {
             compBaseTraitName : "",
             compBaseTraitDesc : "",
             compBaseFeatureName : "Consult Hell (1/Long Rest)",
-            compBaseFeatureDesc : "I can talk to\n  the Hell Hound, tapping into the divinatory\n  powers of Hell, and discuss plans I intend\n  to take in the next 30 minutes. After a\n  minute, the hound will respond with 1\n  bark for good results, 2 barks for bad\n  results, 3 barks for both good and bad\n  results, and no barks for results that\n  aren't good or bad.",
+            compBaseFeatureDesc : "I can talk to\n  the Hell Hound, tapping into the Hell's\n  divinatory powers that mimic the Augury\n  spell. After a  minute, the hound will\n  respond with 1 bark for good results, 2\n  barks for bad results, 3 barks for both\n  good and bad results, and no barks for\n  results that aren't good or bad.",
+            compMysticConn : "You shroud yourself in fire for 10 minutes. Any creature within 5ft that touches you or hits you with a melee weapon attack for the first time in a turn 2d6 fire damage.",
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'mimic': {
             compName : "Mimic",
@@ -510,6 +547,11 @@ SourceList["BHMC"] = {
             compBaseFeatureDesc : "Mimic can use its action\n  to polymorph into an object or to their\n  true amorphous form. Any equipment\n  they are wearing or carrying doesn't\n  transform with them. Mimic reverts to its\n  true form when it dies. Mimic retains its\n  stats regardless of what form it takes.",
             compBaseFeature2Name : "False Appearance (Object Form Only)",
             compBaseFeature2Desc : "\n  Mimic appears to be an ordinary object\n  while in object form.",
+            compMysticConn : "as a bonus action, your teeth become pointed. For 1 minute, you can make bite attacks against targets within 5ft as a bonus action. Your bite is a natural weapon that uses either Str or Dex for attack and damage rolls and deals 1d10 piercing damage.",
+            compMysticConn : "As a bonus action, you can polymorph an item into any non-magical item of a similar size and weight whose value can't exceed the value of the original object. The object remains polymorphed until either: 1 hour has passed, you move mre than 30ft away, or you spend an action to end the polymorph." ,
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'owlbear': {
             compName : "Owlbear",
@@ -542,6 +584,10 @@ SourceList["BHMC"] = {
             compDescription : "is a monstrous cross between giant owl and bear, an owlbear's reputation for\n   ferocity and aggression makes it one of the most feared predators of the wild.",
             compBaseTraitName : "Give a Hoot (1/Long Rest)",
             compBaseTraitDesc : "Owlbear hoots a unique\n  battlecry. If I am able to hear it, I gain 5 x PB temporary\n  hit points.",
+            compMysticConn : "As an action, you can let out an inspiring hoot that gives each creature of your choice within 30ft, temporary hit points equal to your level." ,
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "long rest"
         },
         'sporeling': {
             compName : "Sporeling",
@@ -575,6 +621,10 @@ SourceList["BHMC"] = {
             compBaseTraitDesc : "While I am within 30ft\n  of Sporeling, it can use a bonus action to give me\n  advantage on saving throws for 1 minute.",
             compBaseFeatureName : "False Appearance",
             compBaseFeatureDesc : "If Sporeling remains\n  still, it is indistinguishable from an\n  ordinary fungus.",
+            compMysticConn : "When you hit a target with a weapon attack, you can infuse the attack with spores that impose disadvantage on the target's attack rolls until the end of their next turn." ,
+            compMysticConnAction : "bonus action",
+            compMysticConnUsage : "1",
+            compMysticConnPer : "short or long rest"
         },
         'worg': {
             compName : "Worg",
@@ -606,6 +656,7 @@ SourceList["BHMC"] = {
             compDescription : "is a monstrous wolf-like predator that delights in hunting and devouring\n  creatures weaker than itself.",
             compBaseTraitName : "Move As One",
             compBaseTraitDesc : "If I am mounted on Worg, opportunity\n  attacks against me or Worg are made with disadvantage.\n  I can mount or dismount Worg by spending 5ft of\n  movement.",
+            compMysticConn : "Your walking speed increases by 10ft.",
         },
     };
 
@@ -622,8 +673,9 @@ SourceList["BHMC"] = {
         t.compName = d.name;
         t.compImms = d.damageType;
         t.comp1stLevelTraitDesc = "Wyrmling makes a signature\n  attack as a ranged attack with a normal range of 30ft\n  and a long range of 60ft. On hit, Spit Breath deals extra\n  PB " + d.damageType + " damage.";
-        t.comp5thLevelTraitDesc = "Wyrmling breathes a\n  " + d.breathArea + " of " + d.damageType + ". All creatures caught in the area must\n  make a " + d.breathSave + " save or take PBd6 damage and half as much\n  on success.";
+        t.comp5thLevelTraitDesc = "Wyrmling breathes a\n  " + d.breathArea + " of " + d.damageType + ". All creatures caught in the\n  area must  make a " + d.breathSave + " save or take PBd6 damage and\n  half as much on success.";
         t.compBaseFeatureDesc = "I gain " + d.damageType + " resistance\n  due to my relationship with my wyrmling\n  companion. I also take no damage from\n  its Breath Attack.";
+        t.compMysticConn = "As a bonus action, you can imbue a weapon you hold\n  with draconic power for 10 minutes. While\n  imbued, attacks made with that weapon\n  deal an extra 1d10\n  " + d.damageType + " damage.";
         type = t; // use the injected version
     }
 
@@ -631,6 +683,13 @@ SourceList["BHMC"] = {
     var lvl = Number(What("Classes.Beastheart.level")) || 0;
     var wis = What("Wis Mod");
     var sub = What("ClassSub.beastheart");
+
+    // Give this type a stable key we can store globally
+    var compKey = bhcomp;
+    if (bhcomp === "dragon wyrmling" && color) {
+        compKey = "dragon wyrmling - " + color.toLowerCase();
+    }
+    type.compKey = compKey;
 
     // The template for companions
     var creature = {
@@ -771,24 +830,36 @@ SourceList["BHMC"] = {
                 }
         },
         {
-            name : "Ferocity",
-            description : "At the start of my companion's\n  turn, it gains 1d4 Ferocity and gain an\n  extra +1 for each creature it can see and\n  gain an extra +1 at levels 6, 10, and 15.",
+            name : "Beyond Instinct (Level 5)",
+            minlevel : 5,
+            description : "Select a 3rd\n  saving throw and a new skill proficiency\n  for your companion.",
+        },
+        {
+            name : "Beyond Instinct (Level 10)",
+            minlevel : 10,
+            description : "Select a 4th\n  saving throw and a new skill proficiency\n for your companion.",
+        },
+        {
+            name : "Beyond Instinct (Level 15)",
+            minlevel : 15,
+            description : "Select a 5th\n  saving throw and a new skill proficiency\n  for your companion.",
         }
     ],
-    traits: [{
-        name : type.comp1stLevelTraitName,
-        minlevel : 1,
-        description : type.comp1stLevelTraitDesc,
+    traits: [
+        {
+            name : type.comp1stLevelTraitName,
+            minlevel : 1,
+            description : type.comp1stLevelTraitDesc,
         },
         {
-        name : type.comp3rdLevelTraitName,
-        minlevel : 3,
-        description: type.comp3rdLevelTraitDesc,
+            name : type.comp3rdLevelTraitName,
+            minlevel : 3,
+            description: type.comp3rdLevelTraitDesc,
         },
         {
-        name : type.comp5thLevelTraitName,
-        minlevel : 5,
-        description: type.comp5thLevelTraitDesc,
+            name : type.comp5thLevelTraitName,
+            minlevel : 5,
+            description: type.comp5thLevelTraitDesc,
         }],
     notes: [{
         name : type.compName + " Companion",
@@ -810,11 +881,13 @@ SourceList["BHMC"] = {
             }
         }
     },
-    // Add skill proficiency mapping
+    
     changeeval: function (prefix, lvl) {
+        
         var sNameEntity = "Beastheart Companion";
         var sExplanation = "This companion adds your Proficiency Bonus (oProf) to its AC and proficient skills";
-
+        
+        // Add skill proficiency mapping
         var skillMap = {
             "Acrobatics": "Acr",
             "Animal Handling": "Ani",
@@ -931,6 +1004,7 @@ SourceList["BHMC"] = {
             description: type.compBaseTraitDesc.trim()
         });
     };
+
     return [creature];    
 }
 
@@ -962,21 +1036,31 @@ ClassList["beastheart"] = {
         "\n \u2022 An explorer's pack or a dungeoneer's pack" +
         "\n \u2022 Two handaxes or any simple weapon" +
         "\n\nAlternatively, you can forgo the starting equipment and background equipment, and start with 5d4 x 10 gp.",
-    subclasses : ["Companion Bonds", [/* "ferocious bond","hunter bond","infernal bond","primordial bond","protector bond"*/]],
+    subclasses : ["Companion Bonds", [/* "ferocious bond","hunter bond","infernal bond","primordial bond", "protector bond"*/]],
     attacks : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     abilitySave : 5, //Wisdom for Exploit Save DC
     features: {
-        "natural language": {
-            name : "Natural Language",
-            source : ["BHMC", 27],
+        "feature_1_ferocity" : {
+            name : "Ferocity",
             minlevel : 1,
-            description : desc([
-                "You can verbally communicate with non-complex thoughts to beasts and monstrosities. You",
-                "can make simple statements and ask simple questions. You are able to comprehend simple",
-                "responses. You may use Animal Handling instead of Charisma checks to influence them.",
-            ]),
+            source : ["BHMC", 27],
+            description : "My companion gains 1d4 ferocity + any extra ferocity,\n   due to my level, at the start of my turn. Furthermore, my companion gains 1 extra ferocity\n   for each creature within 5ft that it can see or hear.",
+            additional : levels.map(function (n) {
+                if (n < 5) return "";
+                var ferocity = "";
+                if (n > 14) {
+                    ferocity = "5 extra ferocity";
+                }
+                else if (n > 9) {
+                    ferocity = "3 extra ferocity";
+                }
+                else if (n > 4) {
+                    ferocity = "1 extra ferocity";
+                }
+                return "";
+            }),
         },
-        "companion bond" : {
+        "feature_2_companion bond" : {
             name : "Companion Bond",
             source : ["BHMC", 9-23,27],
             minlevel : 1,
@@ -998,8 +1082,14 @@ ClassList["beastheart"] = {
                 name : "Basilisk",
                 description : desc(["A Basilisk becomes my bonded companion."]),
                 creaturesAdd : [["Basilisk", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Basilisk", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "basilisk";
+                        ApplyCompRace("Basilisk", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "basilisk") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("basilisk")
             },
@@ -1007,8 +1097,14 @@ ClassList["beastheart"] = {
                 name : "Blood Hawk",
                 description : desc(["A Blood Hawk becomes my bonded companion."]),
                 creaturesAdd : [["Blood Hawk", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Blood Hawk", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "blood hawk";
+                        ApplyCompRace("Blood Hawk", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "blood hawk") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("blood hawk")
             },
@@ -1016,8 +1112,14 @@ ClassList["beastheart"] = {
                 name : "Bulette",
                 description : desc(["A Bulette becomes my bonded companion."]),
                 creaturesAdd : [["Bulette", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Bulette", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "bulette";
+                        ApplyCompRace("Bulette", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "bulette") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("bulette")
             },
@@ -1025,26 +1127,44 @@ ClassList["beastheart"] = {
                 name : "Deinonychus",
                 description : desc(["A Deinonychus becomes my bonded companion."]),
                 creaturesAdd : [["Deinonychus", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
+                if (AddRemove) {
+                    // Companion is being selected
+                    BeastheartCompanionKey = "deinonychus";
                     ApplyCompRace("Deinonychus", prefix, "beastheart");
-                }]],
+                } else {
+                    // Companion is being removed / choice cleared
+                    if (BeastheartCompanionKey === "deinonychus") BeastheartCompanionKey = "";
+                }
+            }]],
                 creatureOptions : createBeastheartCompanion("deinonychus")
             },
             "earth elemental" : {
                 name : "Earth Elemental",
                 description : desc(["An Earth Elemental becomes my bonded companion."]),
                 creaturesAdd : [["Earth Elemental", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Earth Elemental", prefix, "beastheart");
-                }]],
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "earth elemental";
+                        ApplyCompRace("Earth Elemental", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "earth elemental") BeastheartCompanionKey = "";
+                    }
+                }]],    
                 creatureOptions : createBeastheartCompanion("earth elemental")
             },
             "gelatinous cube" : {
                 name : "Gelatinous Cube",
                 description : desc(["A Gelatinous Cube becomes my bonded companion."]),
                 creaturesAdd : [["Gelatinous Cube", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Gelatinous Cube", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "gelatinous cube";
+                        ApplyCompRace("Gelatinous Cube", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "gelatinous cube") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("gelatinous cube")
             },
@@ -1052,8 +1172,14 @@ ClassList["beastheart"] = {
                 name : "Giant Spider",
                 description : desc(["A Giant Spider becomes my bonded companion."]),
                 creaturesAdd : [["Giant Spider", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Giant Spider", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "giant spider";
+                        ApplyCompRace("Giant Spider", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "giant spider") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("giant spider")
             },
@@ -1061,8 +1187,14 @@ ClassList["beastheart"] = {
                 name : "Giant Toad",
                 description : desc(["A Giant Toad becomes my bonded companion."]),
                 creaturesAdd : [["Giant Toad", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Giant Toad", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "giant toad";
+                        ApplyCompRace("Giant Toad", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "giant toad") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("giant toad")
             },
@@ -1079,8 +1211,14 @@ ClassList["beastheart"] = {
                 name : "Hell Hound",
                 description : desc(["A Hell Hound becomes my bonded companion."]),
                 creaturesAdd : [["Hell Hound", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Hell Hound", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "hell hound";
+                        ApplyCompRace("Hell Hound", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "hell hound") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("hell hound")
             },
@@ -1088,8 +1226,14 @@ ClassList["beastheart"] = {
                 name : "Mimic",
                 description : desc(["A mimic becomes my bonded companion."]),
                 creaturesAdd : [["Mimic", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Mimic", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "mimic";
+                        ApplyCompRace("Mimic", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "mimic") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("mimic")
             },
@@ -1097,8 +1241,14 @@ ClassList["beastheart"] = {
                 name : "Owlbear",
                 description : desc(["An Owlbear becomes my bonded companion."]),
                 creaturesAdd : [["Owlbear", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Owlbear", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "owlbear";
+                        ApplyCompRace("Owlbear", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "owlbear") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("owlbear")
             },
@@ -1106,8 +1256,14 @@ ClassList["beastheart"] = {
                 name : "Sporeling",
                 description : desc(["A Sporeling becomes my bonded companion."]),
                 creaturesAdd : [["Sporeling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Sporeling", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "sporeling";
+                        ApplyCompRace("Sporeling", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "sporeling") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("sporeling")
             },
@@ -1115,8 +1271,14 @@ ClassList["beastheart"] = {
                 name : "Worg",
                 description : desc(["A Worg becomes my bonded companion."]),
                 creaturesAdd : [["Worg", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Worg", prefix, "beastheart");
+                    if (AddRemove) {
+                        // Companion is being selected
+                        BeastheartCompanionKey = "worg";
+                        ApplyCompRace("Worg", prefix, "beastheart");
+                    } else {
+                        // Companion is being removed / choice cleared
+                        if (BeastheartCompanionKey === "worg") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("worg")
             }, 
@@ -1124,8 +1286,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Red",
                 description : desc(["A red dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Red Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Red Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - red";
+                        ApplyCompRace("Red Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - red") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "red")
             },
@@ -1133,8 +1299,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Blue",
                 description : desc(["A blue dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Blue Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Blue Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - blue";
+                        ApplyCompRace("Blue Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - blue") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "blue")
             },
@@ -1142,8 +1312,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Black",
                 description : desc(["A black dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Black Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Black Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - black";
+                        ApplyCompRace("Black Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - black") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "black")
             },
@@ -1151,8 +1325,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Green",
                 description : desc(["A green dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Green Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Green Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - green";
+                        ApplyCompRace("Green Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - green") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "green")
             },
@@ -1160,8 +1338,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - White",
                 description : desc(["A white dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["White Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("White Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - white";
+                        ApplyCompRace("White Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - white") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "white")
             },
@@ -1169,8 +1351,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Brass",
                 description : desc(["A brass dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Brass Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Brass Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - brass";
+                        ApplyCompRace("Brass Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - brass") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "brass")
             },
@@ -1187,8 +1373,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Copper",
                 description : desc(["A copper dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Copper Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Copper Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - copper";
+                        ApplyCompRace("Copper Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - copper") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "copper")
             },
@@ -1196,8 +1386,12 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Gold",
                 description : desc(["A gold dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Dragon Wyrmling - Gold", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Dragon Wyrmling - Gold", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - gold";
+                        ApplyCompRace("Gold Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - gold") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "gold")
             },
@@ -1205,13 +1399,26 @@ ClassList["beastheart"] = {
                 name : "Dragon Wyrmling - Silver",
                 description : desc(["A silver dragon wyrmling becomes my bonded companion."]),
                 creaturesAdd : [["Silver Dragon Wyrmling", false, function(AddRemove, prefix) {
-                    if (!AddRemove) return;
-                    ApplyCompRace("Silver Dragon Wyrmling", prefix, "beastheart");
+                    if (AddRemove) {
+                        BeastheartCompanionKey = "dragon wyrmling - silver";
+                        ApplyCompRace("Silver Dragon Wyrmling", prefix, "beastheart");
+                    } else {
+                        if (BeastheartCompanionKey === "dragon wyrmling - silver") BeastheartCompanionKey = "";
+                    }
                 }]],
                 creatureOptions : createBeastheartCompanion("dragon wyrmling", "silver")
             }
         },
-        "primal exploits": {
+        "feature_3_natural_language": {
+            name : "Natural Language",
+            source : ["BHMC", 27],
+            minlevel : 1,
+            description : desc([
+                "I can communicate verbal non-complex ideas to beasts and monstrosities and understand ",
+                "simple responses. I can use Animal Handling instead of Cha checks to influence them.",
+            ]),
+        },
+        "feature_4_primal_exploits": {
             name : "Primal Exploits",
             source : ["BHMC", 27],
             minlevel : 2,
@@ -1502,6 +1709,245 @@ ClassList["beastheart"] = {
                 action : [["bonus action", ""]],
             },
         },
+        "feature_5_superior ferocity" : {
+            name : "Superior Ferocity",
+            source : ["BHMC", 30],
+            minlevel : 2,
+            description : desc([
+                "When my companion uses a ferocity action that requires a target to make a save or ability",
+                "check, it can use my primal exploit save DC instead of its normal DC"
+            ]),
+        },
+        "feature_6_master caregiver" : {
+            name : "Master Caregiver",
+            source : ["BHMC", 30],
+            minlevel : 3,
+            description : desc([
+                "I gain proficiency in Animal Handling. If I have proficiency, my proficiency bonus is doubled."
+            ]),
+            skillstxt : "Animal Handling|expertise",
+        },
+      "feature_9_beyond_instinct" : {
+            name : "Beyond Instinct",
+            source : ["BHMC", 30],
+            minlevel : 5,
+            description : desc([
+                "My companion gains Extra ferocity at the start of my turn (scales with level). They",
+                "also gain proficiency with saving throws in 1 ability score of my choice and proficiency",
+                "in one of the following skills: Acrobatics, Animal Handling, Athletics, Investigation,",
+                "Perception, Performance, Sleight of Hand, Stealth, or Survival at 5th, 10th, and 15th",
+                "level. My companion can use Wis instead of Int for Investigation checks and Str or Dex",
+                "instead of Cha for Performance or Intimidation checks."
+            ])
+        },
+        "feature_10_faithful_companion" : {
+            name : "Faithful Companion",
+            minlevel : 6,
+            description : desc([
+                "I no longer need to use a bonus action to command my companion. Additionally, when my",
+                "companion enters rampage, I choose where it moves to and which creature they attack."
+            ])
+        },
+        "feature_11_rejuvenating ferocity" : {
+            name : "Rejuvenating Ferocity",
+            minlevel : 6,
+            description : desc([
+                "As a bonus action,I can spend any number of my companion's ferocity and my companion",
+                "gains hit points equal to the amount of ferocity spent."
+            ]),
+            usages: "Wisdom modifier per ",
+            usagescalc: "event.value = Math.max(1, What('Wis Mod'));",
+            recovery: "long rest",
+            action : [["bonus action", ""]],
+
+        },
+        "feature_13_primal strikes" : {
+            name : "Primal Strikes",
+            minlevel : 8,
+            description : desc([
+                "Once per turn when I hit a creature with a weapon attack, I can deal extra damage.",
+                "The damage type is chosen when I gain this feature and can be changed each time I",
+                "gain a Beastheart level. The damage increases to 2d8 at 14th level."
+            ]),
+
+            // Show just the dice here; the type is handled by the chosen option
+            additional : levels.map(function (n) {
+                return n < 14 ? "+1d8 damage" : "+2d8 damage";
+            }),
+
+            extraname : "Primal Strikes Damage Type",
+            extrachoices : ["Acid","Cold","Fire","Lightning","Poison","Thunder"],
+            extrachoicesMin : 1,
+            extrachoicesMax : 1,
+
+            // Each choice is its own little feature; only the chosen one is active
+            "acid" : {
+                name : "Acid",
+                description : "\n  My Primal Strikes deal acid damage.",
+                calcChanges : {
+                    atkAdd : [
+                        function (fields, v) {
+                            if (!v.isWeapon) return;
+
+                            var lvl  = classes.known.beastheart.level || 0;
+                            var dice = lvl < 14 ? "1d8" : "2d8";
+
+                            if (!fields.Description) fields.Description = "";
+                            var tag = "Primal Strikes +" + dice + " acid damage";
+                            if (fields.Description.indexOf(tag) !== -1) return;
+
+                            fields.Description += (fields.Description ? "; " : "") + tag;
+                        }
+                    ]
+                }
+            },
+
+            "cold" : {
+                name : "Cold",
+                description : "\n  My Primal Strikes deal cold damage.",
+                calcChanges : {
+                    atkAdd : [
+                        function (fields, v) {
+                            if (!v.isWeapon) return;
+
+                            var lvl  = classes.known.beastheart.level || 0;
+                            var dice = lvl < 14 ? "1d8" : "2d8";
+
+                            if (!fields.Description) fields.Description = "";
+                            var tag = "Primal Strikes +" + dice + " cold damage";
+                            if (fields.Description.indexOf(tag) !== -1) return;
+
+                            fields.Description += (fields.Description ? "; " : "") + tag;
+                        }
+                    ]
+                }
+            },
+
+            "fire" : {
+                name : "Fire",
+                description : "\n  My Primal Strikes deal fire damage.",
+                calcChanges : {
+                    atkAdd : [
+                        function (fields, v) {
+                            if (!v.isWeapon) return;
+
+                            var lvl  = classes.known.beastheart.level || 0;
+                            var dice = lvl < 14 ? "1d8" : "2d8";
+
+                            if (!fields.Description) fields.Description = "";
+                            var tag = "Primal Strikes +" + dice + " fire damage";
+                            if (fields.Description.indexOf(tag) !== -1) return;
+
+                            fields.Description += (fields.Description ? "; " : "") + tag;
+                        }
+                    ]
+                }
+            },
+
+            "lightning" : {
+                name : "Lightning",
+                description : "\n  My Primal Strikes deal lightning damage.",
+                calcChanges : {
+                    atkAdd : [
+                        function (fields, v) {
+                            if (!v.isWeapon) return;
+
+                            var lvl  = classes.known.beastheart.level || 0;
+                            var dice = lvl < 14 ? "1d8" : "2d8";
+
+                            if (!fields.Description) fields.Description = "";
+                            var tag = "Primal Strikes +" + dice + " lightning damage";
+                            if (fields.Description.indexOf(tag) !== -1) return;
+
+                            fields.Description += (fields.Description ? "; " : "") + tag;
+                        }
+                    ]
+                }
+            },
+
+            "poison" : {
+                name : "Poison",
+                description : "\n  My Primal Strikes deal poison damage.",
+                calcChanges : {
+                    atkAdd : [
+                        function (fields, v) {
+                            if (!v.isWeapon) return;
+
+                            var lvl  = classes.known.beastheart.level || 0;
+                            var dice = lvl < 14 ? "1d8" : "2d8";
+
+                            if (!fields.Description) fields.Description = "";
+                            var tag = "Primal Strikes +" + dice + " poison damage";
+                            if (fields.Description.indexOf(tag) !== -1) return;
+
+                            fields.Description += (fields.Description ? "; " : "") + tag;
+                        }
+                    ]
+                }
+            },
+
+            "thunder" : {
+                name : "Thunder",
+                description : "\n  My Primal Strikes deal thunder damage.",
+                calcChanges : {
+                    atkAdd : [
+                        function (fields, v) {
+                            if (!v.isWeapon) return;
+
+                            var lvl  = classes.known.beastheart.level || 0;
+                            var dice = lvl < 14 ? "1d8" : "2d8";
+
+                            if (!fields.Description) fields.Description = "";
+                            var tag = "Primal Strikes +" + dice + " thunder damage";
+                            if (fields.Description.indexOf(tag) !== -1) return;
+
+                            fields.Description += (fields.Description ? "; " : "") + tag;
+                        }]
+                    }
+                }
+            },
+        "feature_14_mystic_connection" : {
+            name : "Mystic Connection",
+            minlevel : 9,
+            description : desc([
+                "You gain a mystic ability linked to your chosen companion.",
+                "Action Type: (see 3rd page Notes section)"
+            ]),
+            toNotesPage : [{
+            name : "Mystic Connection",
+            note : mysticConnectionNote(),
+            page3notes: true,
+        }]
+        },
+        "feature_16_loyal_to_the_end" : {
+            name : "Loyal to the End",
+            minlevel : 13,
+            description : desc([
+                "Both me and my companion cannot be charmed or frightened."
+            ])
+        },
+        "feature_17_keen_senses" : {
+            name : "Keen Senses",
+            minlevel : 14,
+            description : desc([
+                "I gain advantage on Wisdom (Perception) checks involving sight, sound or smell.",
+                "Additionally, I can take the Search action as a bonus action."
+            ])
+        },
+        "feature_19_summon_the_wilds" : {
+            name : "Summon the Wilds",
+            minlevel : 18,
+            description : desc([
+                "<placeholder>I can summon a swarm of nearby creatures...."
+            ])
+        },
+        "feature_20_unbreakable_friendship" : {
+            name : "Unbreakable Friendship",
+            minlevel : 20,
+            description : desc([
+                "<placeholder>My bond with my companion is unbreakable... as is my companion"
+            ])
+        }
     }
 };  
 AddSubClass("beastheart", "protector bond", {
@@ -1509,11 +1955,11 @@ AddSubClass("beastheart", "protector bond", {
     subname : "Protector Bond",
     source : ["BHMC", 27],
     features : {
-        "subclassfeature3" : {
+        "feature_7_protector_beast_vitality" : {
             name : "Beast Vitality",
             minlevel : 3,
             description : desc([
-                "My hit point maximum increases by 3, and also increases by 1 whenever I gain a Beastheart level."
+                "My hit point maximum increases by 1 for each Beastheart level."
             ]),
             calcChanges : {
                 hp : function (totalHD) {
@@ -1523,38 +1969,38 @@ AddSubClass("beastheart", "protector bond", {
                 }
             }
         },
-        "subclassfeature3.1" : {
+        "feature_8_protector_pack_phalanx" : {
             name : "Pack Phalanx",
             minlevel : 3,
             description : desc([
-                "When my companion and I are not incapacitated and within 5ft of a creature, it has disadvantage on", 
-                "attack rolls against targets that are not myself or my companion."
+                "When my companion and I are not incapacitated and within 5ft of a creature, it has", 
+                "disadvantage on attack rolls against targets that are not myself or my companion."
             ])
         },
-        "subclassfeature7" : {
+        "feature_12_protector_thickened_hide" : {
             name : "Thickened Hide",
             minlevel : 7,
             description : desc([
                 "Your companion's natural defenses improve, granting it +2 AC."
             ])
         },
-        "subclassfeature11" : {
+        "feature_15_protector_sentinel_companion" : {
             name : "Sentinel Companion",
             minlevel : 11,
             description : desc([
-                "If a creature within 5ft of my companion attacks a target other than my companion, I can spend 2 ferocity", 
-                "to have my companion use their reaction to make a signature attack against that creature.",
+                "If a creature within 5ft of my companion attacks a target other than my companion, I can", 
+                "spend 2 ferocity to have my companion use their reaction to make a signature attack against",
+                "that creature."
             ])
         },
-        "subclassfeature15" : {
+        "feature_18_protector_undying_protector" : {
             name : "Undying Protector",
             minlevel : 15,
             description : desc([
-                "If I fall to 0 hit points and can see my companion, I can spend 2 ferocity to drop to 1 hit point instead.",
-                "Each time I use this feature, the cost increases by 2 ferocity. The cost resets to 2 ferocity when I finish a",
-                "long or short rest."
+                "If I fall to 0 hit points and can see my companion, I can spend 2 ferocity to drop to 1 hit point",
+                "instead. Each time I use this feature, the cost increases by 2 ferocity. The cost resets to 2",
+                "ferocity when I finish a long or short rest."
             ])
         }
-
     }
 });
