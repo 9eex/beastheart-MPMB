@@ -1036,31 +1036,34 @@ ClassList["beastheart"] = {
         "\n \u2022 An explorer's pack or a dungeoneer's pack" +
         "\n \u2022 Two handaxes or any simple weapon" +
         "\n\nAlternatively, you can forgo the starting equipment and background equipment, and start with 5d4 x 10 gp.",
-    subclasses : ["Companion Bonds", [/* "ferocious bond","hunter bond","infernal bond","primordial bond", "protector bond"*/]],
+    subclasses : ["Companion Bonds", []],
     attacks : [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     abilitySave : 5, //Wisdom for Exploit Save DC
     features: {
-        "feature_1_ferocity" : {
+        "feature_2_ferocity" : {
             name : "Ferocity",
             minlevel : 1,
             source : ["BHMC", 27],
-            description : "My companion gains 1d4 ferocity + any extra ferocity,\n   due to my level, at the start of my turn. Furthermore, my companion gains 1 extra ferocity\n   for each creature within 5ft that it can see or hear.",
+            description : desc([
+                "My companion gains 1d4 ferocity + any extra ferocity, due to my level, at the start of my turn",
+                "and also gains +1 ferocity for each creature within 5ft they can see or hear."
+            ]),
             additional : levels.map(function (n) {
                 if (n < 5) return "";
                 var ferocity = "";
                 if (n > 14) {
-                    ferocity = "5 extra ferocity";
+                    ferocity = "+5 ferocity";
                 }
                 else if (n > 9) {
-                    ferocity = "3 extra ferocity";
+                    ferocity = "+3 ferocity";
                 }
                 else if (n > 4) {
-                    ferocity = "1 extra ferocity";
+                    ferocity = "+1 ferocity";
                 }
-                return "";
+                return ferocity;
             }),
         },
-        "feature_2_companion bond" : {
+        "feature_1_companion bond" : {
             name : "Companion Bond",
             source : ["BHMC", 9-23,27],
             minlevel : 1,
@@ -1068,9 +1071,6 @@ ClassList["beastheart"] = {
                 "I gain a supernatural companion bound to me.",
                 "Choose your companion."
             ]),
-            /* choices : [
-                "Basilisk", "Blood Hawk", "Bulette", "Deinonychus", "Earth Elemental", "Gelatinous Cube", "Giant Spider", "Giant Toad", "Giant Weasel","Hell Hound","Mimic","Owlbear","Sporeling","Worg","Dragon Wyrmling"
-            ], */
             choices : [
                 "Basilisk","Blood Hawk","Bulette","Deinonychus","Earth Elemental","Gelatinous Cube","Giant Spider","Giant Toad","Giant Weasel","Hell Hound","Mimic","Owlbear","Sporeling","Worg",
                 // Register all wyrmling colors - there is a nicer way to do this but for now this is fine
@@ -1083,11 +1083,12 @@ ClassList["beastheart"] = {
                 description : desc(["A Basilisk becomes my bonded companion."]),
                 creaturesAdd : [["Basilisk", false, function(AddRemove, prefix) {
                     if (AddRemove) {
-                        // Companion is being selected
+                        // Companion selected
                         BeastheartCompanionKey = "basilisk";
                         ApplyCompRace("Basilisk", prefix, "beastheart");
+
                     } else {
-                        // Companion is being removed / choice cleared
+                        // Companion removed
                         if (BeastheartCompanionKey === "basilisk") BeastheartCompanionKey = "";
                     }
                 }]],
@@ -1101,6 +1102,7 @@ ClassList["beastheart"] = {
                         // Companion is being selected
                         BeastheartCompanionKey = "blood hawk";
                         ApplyCompRace("Blood Hawk", prefix, "beastheart");
+
                     } else {
                         // Companion is being removed / choice cleared
                         if (BeastheartCompanionKey === "blood hawk") BeastheartCompanionKey = "";
@@ -1432,7 +1434,7 @@ ClassList["beastheart"] = {
             }),
             extraname : "Primal Exploits",
             extrachoices : ["Aid Us, Friend", "Bring Them Down", "Drag Them", "Feral Reflexes", "Hurricane Blow", "No Escape", "Primal Pounce", "Quick Hide", "Thrash", "Crushing Charge", "Expanding Fury", "Furious Vengeance", "Marked Prey", "Primal Shout", "Wrath of the Pack", "Blood Sport", "Break the Earth", "Bury the Dead", "Imbue Projectile", "Rend", "Spirit Form"],
-            extratimes : levels.map(function (n) {
+            extrachoicesemax : levels.map(function (n) {
                 return n < 2 ? "" : (n < 10 ? 3 : n < 17 ? 5 : 7);
             }),
             "aid us, friend": {
@@ -1715,7 +1717,7 @@ ClassList["beastheart"] = {
             minlevel : 2,
             description : desc([
                 "When my companion uses a ferocity action that requires a target to make a save or ability",
-                "check, it can use my primal exploit save DC instead of its normal DC"
+                "check, it can use my primal exploit save DC instead of its normal DC."
             ]),
         },
         "feature_6_master caregiver" : {
@@ -1732,12 +1734,12 @@ ClassList["beastheart"] = {
             source : ["BHMC", 30],
             minlevel : 5,
             description : desc([
-                "My companion gains Extra ferocity at the start of my turn (scales with level). They",
-                "also gain proficiency with saving throws in 1 ability score of my choice and proficiency",
-                "in one of the following skills: Acrobatics, Animal Handling, Athletics, Investigation,",
-                "Perception, Performance, Sleight of Hand, Stealth, or Survival at 5th, 10th, and 15th",
-                "level. My companion can use Wis instead of Int for Investigation checks and Str or Dex",
-                "instead of Cha for Performance or Intimidation checks."
+                "My companion gains extra ferocity at the start of my turn (scales with level). They also gain",
+                "proficiency with saving throws in an ability score of my choice and proficiency in one of the",
+                "following skills: Acrobatics, Animal Handling, Athletics, Investigation, Perception, Performance,",
+                "Sleight of Hand, Stealth, or Survival at 5th, 10th, and 15th level. My companion can use Wis", 
+                "instead of Int for Investigation checks and Str or Dex instead of Cha for Performance or",
+                "Intimidation checks. Select them on the Companion Sheet"
             ])
         },
         "feature_10_faithful_companion" : {
@@ -1765,9 +1767,9 @@ ClassList["beastheart"] = {
             name : "Primal Strikes",
             minlevel : 8,
             description : desc([
-                "Once per turn when I hit a creature with a weapon attack, I can deal extra damage.",
-                "The damage type is chosen when I gain this feature and can be changed each time I",
-                "gain a Beastheart level. The damage increases to 2d8 at 14th level."
+                "Once per turn when I hit a creature with a weapon attack, I can deal extra damage. The",
+                "damage type is chosen when I gain this feature and can be changed each time I gain a",
+                "Beastheart level. The damage increases to 2d8 at 14th level."
             ]),
 
             // Show just the dice here; the type is handled by the chosen option
@@ -1775,10 +1777,8 @@ ClassList["beastheart"] = {
                 return n < 14 ? "+1d8 damage" : "+2d8 damage";
             }),
 
-            extraname : "Primal Strikes Damage Type",
-            extrachoices : ["Acid","Cold","Fire","Lightning","Poison","Thunder"],
-            extrachoicesMin : 1,
-            extrachoicesMax : 1,
+            choices : ["Acid","Cold","Fire","Lightning","Poison","Thunder"],
+
 
             // Each choice is its own little feature; only the chosen one is active
             "acid" : {
@@ -1906,19 +1906,287 @@ ClassList["beastheart"] = {
                     }
                 }
             },
-        "feature_14_mystic_connection" : {
-            name : "Mystic Connection",
-            minlevel : 9,
-            description : desc([
-                "You gain a mystic ability linked to your chosen companion.",
-                "Action Type: (see 3rd page Notes section)"
-            ]),
-            toNotesPage : [{
-            name : "Mystic Connection",
-            note : mysticConnectionNote(),
-            page3notes: true,
-        }]
-        },
+            "feature_14_mystic_connection" : {
+    name : "Mystic Connection",
+    minlevel : 9,
+    source : ["BHMC", 30],
+    description : desc([
+        "Your bond grants you a mystic ability. Select your current companion from the",
+        "'Choose Feature' > 'Mystic Connection' menu."
+    ]),
+    
+    choices : [
+        "Basilisk","Blood Hawk","Bulette","Deinonychus","Earth Elemental",
+        "Gelatinous Cube","Giant Spider","Giant Toad","Giant Weasel",
+        "Hell Hound","Mimic","Owlbear","Sporeling","Worg",
+        "Dragon Wyrmling - Black","Dragon Wyrmling - Blue","Dragon Wyrmling - Green",
+        "Dragon Wyrmling - Red","Dragon Wyrmling - White",
+        "Dragon Wyrmling - Brass","Dragon Wyrmling - Bronze","Dragon Wyrmling - Copper",
+        "Dragon Wyrmling - Gold","Dragon Wyrmling - Silver"
+    ],
+
+    /* =======================
+       STANDARD COMPANIONS
+       ======================= */
+
+    "basilisk" : {
+        name : "Mystic Connection (Basilisk)",
+        description : desc([
+            "As a bonus action,I gain resistance to bludgeoning, piercing, and slashing damage for 10 minutes."
+        ]),
+        action : [["bonus action", "Mystic Connection (Basilisk)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "blood hawk" : {
+        name : "Mystic Connection (Blood Hawk)",
+        description : desc([
+            "As a bonus action, I gain a flying speed equal to my walking speed for 1 hour."
+        ]),
+        action : [["bonus action", "Mystic Connection (Blood Hawk)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "bulette" : {
+        name : "Mystic Connection (Bulette)",
+        description : desc([
+            "As a bonus action, I gain a burrowing speed equal to my walking speed for 10 minutes."
+        ]),
+        action : [["bonus action", "Mystic Connection (Bulette)"]],
+        usages : 1,
+        recovery : "short or long rest"
+    },
+
+    "deinonychus" : {
+        name : "Mystic Connection (Deinonychus)",
+        description : desc([
+            "I can take the Hide action as a bonus action."
+        ]),
+        action : [["bonus action", "Mystic Connection (Deinonychus)"]],
+        usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+        recovery : "long rest"
+    },
+
+    "earth elemental" : {
+        name : "Mystic Connection (Earth Elemental)",
+        description : desc([
+            "As a bonus action, my body becomes dirt and stone for 10 minutes. While transformed, I can",
+            "pass through nonmagical earth and stone. If I end my turn inside an object, I take 1d10 force",
+            "damage and am shunted out to the location I entered the object."
+        ]),
+        action : [["bonus action", "Mystic Connection (Earth Elemental)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "gelatinous cube" : {
+        name : "Mystic Connection (Gelatinous Cube)",
+        description : desc([
+            "As a bonus action, I can make my body flexible and gelatinous. While in this state, I can",
+            "absorb or excrete a Tiny object as a bonus action. I can secrete a maximum of 4 objects at a.",
+            "time. When a creature within 5 ft hits me with a melee attack, I can use my reaction to deal",
+            "3d6 acid damage to the attacker."
+        ]),
+        action : [["bonus action", "Mystic Connection (Gelatinous Cube)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "giant spider" : {
+        name : "Mystic Connection (Giant Spider)",
+        description : desc([
+            "I have advantage on initiative rolls and can't be surprised while not incapacitated."
+        ])
+    },
+
+    "giant toad" : {
+        name : "Mystic Connection (Giant Toad)",
+        description : desc([
+            "I can hold my breath for up to 1 hour and gain a swim speed equal to my walking speed.",
+            "I make long and high jumps as if I had a running start."
+        ])
+    },
+
+    "giant weasel" : {
+        name : "Mystic Connection (Giant Weasel)",
+        description : desc([
+            "As a bonus action, my teeth become pointed for 1 minute. During this time, I can make a bite",
+            "attack as a bonus action. My bite is a natural weapon that I'm proficient in. This attack uses",
+            "either my Str or Dex modifier for attacks and damage and deals 1d10 piercing damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Giant Weasel)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "hell hound" : {
+        name : "Mystic Connection (Hell Hound)",
+        description : desc([
+            "As a bonus action, I shroud myself in fire for 10 minutes. The first time each turn a creature",
+            "within 5 ft touches me or hits me with a melee attack, it takes 2d6 fire damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Hell Hound)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "mimic" : {
+        name : "Mystic Connection (Mimic)",
+        description : desc([
+            "As a bonus action, I can polymorph a nonmagical item into another nonmagical item of",
+            "nsimilar size and weight for up to 1 hour. The effect ends early if I move more than 30 ft away,",
+            "an hour elapses, or I end the effect as an action."
+        ]),
+        action : [["bonus action", "Mystic Connection (Mimic)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "owlbear" : {
+        name : "Mystic Connection (Owlbear)",
+        description : desc([
+            "As an action, I let out an inspiring hoot. Each creature of my choice within 30 ft gains",
+            "temporary hit points equal to my Beastheart level."
+        ]),
+        action : [["action", "Mystic Connection (Owlbear)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "sporeling" : {
+        name : "Mystic Connection (Sporeling)",
+        description : desc([
+            "When I hit a creature with a weapon attack, I can infuse the attack with spores. The target has",
+            "disadvantage on its attack rolls until the end of its next turn."
+        ]),
+        usages : 1,
+        recovery : "short or long rest"
+    },
+
+"worg" : {
+  name : "Mystic Connection (Worg)",
+  description : desc([
+    "My walking speed increases by 10 feet."
+  ]),
+  speed : { walk : "+10" }
+},
+
+    /* =======================
+       DRAGON WYRMLINGS
+       ======================= */
+
+    "dragon wyrmling - black" : {
+        name : "Mystic Connection (Black Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 acid damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Black Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - blue" : {
+        name : "Mystic Connection (Blue Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 lightning damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Blue Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - green" : {
+        name : "Mystic Connection (Green Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 poison damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Green Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - red" : {
+        name : "Mystic Connection (Red Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 fire damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Red Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - white" : {
+        name : "Mystic Connection (White Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 cold damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (White Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - brass" : {
+        name : "Mystic Connection (Brass Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 fire damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Brass Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - bronze" : {
+        name : "Mystic Connection (Bronze Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 lightning damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Bronze Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - copper" : {
+        name : "Mystic Connection (Copper Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 acid damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Copper Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - gold" : {
+        name : "Mystic Connection (Gold Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 fire damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Gold Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    },
+
+    "dragon wyrmling - silver" : {
+        name : "Mystic Connection (Silver Wyrmling)",
+        description : desc([
+            "As a bonus action, I imbue a weapon I hold with draconic power for 10 minutes. While",
+            "imbued, attacks made with that weapon deal an extra 1d10 cold damage."
+        ]),
+        action : [["bonus action", "Mystic Connection (Silver Wyrmling)"]],
+        usages : 1,
+        recovery : "long rest"
+    }
+},
         "feature_16_loyal_to_the_end" : {
             name : "Loyal to the End",
             minlevel : 13,
@@ -1932,30 +2200,561 @@ ClassList["beastheart"] = {
             description : desc([
                 "I gain advantage on Wisdom (Perception) checks involving sight, sound or smell.",
                 "Additionally, I can take the Search action as a bonus action."
-            ])
+            ]),
+            vision : [["Adv. on Perception relying on sight, hearing, or smell", 0]]
         },
         "feature_19_summon_the_wilds" : {
             name : "Summon the Wilds",
             minlevel : 18,
             description : desc([
-                "<placeholder>I can summon a swarm of nearby creatures...."
-            ])
+                "As an action, I summon a swarm of nearby creatures (animals, insects, fish, birds) for 1 minute.",
+                "The swarm occupies a 30ft cube and appears, centered on a point up to 120ft away. All ",
+                "creatures of my choice who start their turn in the swarm's area must make a Wis save or have",
+                "disadvantage on attacks, saves, and ability checks, and gain a -5 penalty to passive perception",
+                "until the start of their next turn. As a bonus action I can move the swarm 30ft in any direction."
+            ]),
+            action : [["action", "Summon the Wilds"]],
+            usages : 1,
+            recovery : "short or long rest"
         },
         "feature_20_unbreakable_friendship" : {
             name : "Unbreakable Friendship",
             minlevel : 20,
             description : desc([
-                "<placeholder>My bond with my companion is unbreakable... as is my companion"
+                "While my companion is on at least 1 hp and can see and hear me, I can choose to succeed on",
+                "Animal Handling checks to prevent my companion from entering rampage, and my",
+                "companion gains 1d10 ferocity when they roll for initiative. Furthermore,if my companion is",
+                "reduced to 0hp but not killed outright, they drop to 1h if my companion isp instead."
             ])
         }
     }
 };  
+// Beastheart Subclasses
+
+/* --- Subclass: Ferocious Bond --- */
+AddSubClass("beastheart", "ferocious bond", {
+    regExpSearch : /^(?=.*ferocious)(?=.*bond).*$/i,
+    subname : "Ferocious Bond",
+    source : ["BHMC", 32],
+    features : {
+        "subclassfeature 3.1" : {
+            name : "Frenzied Charge",
+            source : ["BHMC", 32],
+            minlevel : 3,
+            description : desc([
+                "As a reaction to when my companion enters rampage, I can move up to 30ft then make a melee",
+                "weapon attack.",
+            ]),
+            action : ["reaction", ""],
+        },
+        "subclassfeature 3.1" : {
+            name : "Fury of the Wise",
+            source : ["BHMC", 33],
+            minlevel : 3,
+            description : desc([
+                "I gain proficiency in Intimidation if I do not already have it.",
+                "Additionally, I add my Wisdom modifier to Charisma (Intimidation) checks."
+            ]),
+            eval : "AddSkillProf('Intimidation', true, false); AddSkillExtra('Intimidation', 'wis');",
+            removeeval : "RemoveSkillProf('Intimidation', true, false); RemoveSkillExtra('Intimidation', 'wis');"
+        },
+        "subclassfeature 7.0" : {
+            name : "Energizing Rampage",
+            source : ["BHMC", 32],
+            minlevel : 7,
+            description : desc([
+                "When my companion ends rampage, their ferocity drops to 4 rather than 0.",
+            ]),
+        },
+        "subclassfeature 11.0" : {
+            name : "Furious Rampage",
+            source : ["BHMC", 34], 
+            minlevel : 11,
+            description : desc([
+                "When my companion hits one of my enemies during a rampage with a signature attack,",
+                "the attack deals extra damage equal to their ferocity. While rampaging, when my",
+                "companion attacks a target within 5ft of me, they can make the attack with advantage.",
+                "If I make an attack against a target within 5ft of my companion after using Furious",
+                "Charge, I can make the attack with advantage.",
+            ]),
+        },
+        "subclassfeature 15.0" : {
+            name : "Invigorating Rampage",
+            source : ["BHMC", 34],
+            minlevel : 15,
+            description : desc([
+                "When my companion hits a creature with a signature attack during rampage, or if I",
+                "hit a creature after using Frenzied Charge, the target becomes either blinded, ",
+                "deafened or frightened (my choice) of the attacker until the end of the target's",
+                "next turn",
+            ]),
+        },
+    },
+})
+
+/* --- Subclass: Hunter Bond --- */
+AddSubClass("beastheart", "hunter bond", { 
+    regExpSearch : /^(?=.*hunter)(?=.*bond).*$/i,
+    subname : "Hunter Bond",
+    source : ["BHMC", 34],  
+    features : {
+        "subclassfeature 3.1" : {
+            name: "Chosen Quarry",
+            source : ["BHMC", 34],
+            minlevel : 3,
+            description : desc([   
+                "When my companion gains ferocity at the start of my turn and doesn't enter rampage, I", 
+                "can spend 4 ferocity to designate one creature I can see within 60ft of me as my quarry",
+                "for 1 minute or until I choose a new target. When I hit my quarry with a weapon attack",
+                "or deal damage to them with a ferocity action, the attack deals an extra 1d6 damage.",
+            ]),
+        },
+        "subclassfeature 3.2" : {
+            name : "Hunter's Instincts",
+            source : ["BHMC", 34],
+            minlevel : 3,
+            description : desc([
+                "I gain proficiency in Survival if I do not already have it.",
+                "My proficiency bonus is doubled for any ability check I make using Survival.",
+                "I can use Survival instead of Insight when I make a Wisdom check to read a creature's intentions or discern if a creature is lying."
+            ]),
+            eval : "AddSkillProf('Survival', true, false); AddSkillExpertise('Survival', true);",
+            removeeval : "RemoveSkillProf('Survival', true, false); RemoveSkillExpertise('Survival', true);"
+        },
+        "subclassfeature 7.0" : {
+            name : "Primal Warding",
+            source : ["BHMC", 34],
+            minlevel : 7,
+            description : desc([
+                "As an action, create a 10ft square trap on the ground centered on a point I can see within",
+                " 30ft of me. The trap lasts 8 hours. I can designate any number of creatures that are",
+                "unaffected by it. Finding the trap requires an Int (Investigation check. When any undesignated",
+                "creature enters the trap's area, it must make a Con save or take 4d8 damage and be blinded for",
+                "1 minute. On a save, it takes half damage and is not blinded. When triggered the trap mentally", 
+                "alerts me, waking me if I am asleep. I know which trap has been tripped if I have set more than",
+                "one. I can set a number of traps equal to my Wis modifier per long rest",
+            ]),
+            action : [["action", ""]],
+            usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
+            recovery : "long rest",
+        },
+        "subclassfeature 11.0" : {
+            name : "Synchronized Stealth", 
+            source : ["BHMC", 34],
+            minlevel : 11,
+            description : desc([
+                "When either my companion or I takes the Hide action, the other can also hide as a reaction ",
+                "(if they are able to hide). Additionally, if I am within 5ft when I take the Hide action, I",
+                "make the Dex (Stealth) check with advantage.",
+            ]),
+            action : [["reaction", ""]],
+        },
+        "subclassfeature 15.0" : {
+            name : "Unseen Hunters",
+            source : ["BHMC", 34],
+            minlevel : 15,
+            description : desc([
+                "As an action, my companion and I become invisible for 10 minutes. While invisble, my",
+                "companion and I can not be tracked by non-magical means unless my companion or I choose",
+                "to leave a trail. My companion or I can end the invisibility early as a bonus action.",
+            ]),
+            action : [["action", ""]],
+            recovery : "long rest",
+            usages : 1,
+        },
+    },
+})
+
+/* --- Subclass: Infernal Bond --- */
+AddSubClass("beastheart", "infernal bond", {
+    regExpSearch : /^(?=.*infernal)(?=.*bond).*$/i,
+    subname : "Infernal Bond",
+    source : ["BHMC", 36],
+    features : {    
+        "subclassfeature 3.1" : {
+            name : "Devil's Understanding",
+            source : ["BHMC", 36],
+            minlevel : 3,
+            description : desc([
+                "I gain proficiency in either Arcana or Religion, if I don't already have proficiency in either.", 
+                " Also, I can now speak, write and understand Infernal.",
+            ]),
+            skills : ["arcana", "religion"],
+            languages : ["Infernal"],
+        },
+        "subclassfeature 3.2" : {
+            name : "Infernal Exploits",
+            source : ["BHMC", 36],
+            minlevel : 3,
+            description : desc([
+                'Use the "Choose Feature" button above to add Infernal Exploits to the third page',
+                "Whenever I gain a Beastheart level, I can replace an exploit I know with another.",
+            ]),
+            additional: levels.map(function (n) {
+                return n < 3 ? "" : (n < 11 ? 1 : 2) + " Infernal Exploits known";
+            }),
+            extraname : "Infernal Exploit",
+            extrachoices : ["Drain Them", "Hellish Wound", "Infernal Teleport", "Wicked Deception", "Brimstone Teleport", "Chains from Hell", "Dark of Hell", "Infernal Flames", "Poison Rain"],
+            extratimes : levels.map(function (n) {
+                return n < 3 ? 0 : n < 11 ? 1 : 2;
+            }),
+            "drain them": {
+                name : "Drain Them",
+                source : ["BHMC", 36],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [4 Ferocity]" + desc([
+                    "When my companion hits a creature with their signature attack, I can use my ",
+                    "reaction to have my companion gain hit points equal to half the damage dealt.",
+                ]),
+                action : [["reaction", ""]],
+            },
+            "hellish wound": {
+                name : "Hellish Wound",
+                source : ["BHMC", 36],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [4 Ferocity]" + desc([
+                    "When my companion hits a no-construct, non-undead creature with an attack, I can",
+                    "to have my companion inflict a Hellish Wound (no action reqd). At the start of each",
+                    "of the target's turns, it loses 1d10 hit points for each Hellish Wound. The Hellish",
+                    "Wounds disappear if the target receives magical healing or if any creature uses and",
+                    "action to staunch the wounds with a successful Wis (Medicine) check vs my Exploit Save DC.",
+                ]),
+                action : [["reaction", ""]],
+            },
+            "infernal teleport": {
+                name : "Infernal Teleport",
+                source : ["BHMC", 36],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [4 Ferocity]" + desc([
+                    "As an action, I can teleport myself or my companion to an unoccupied space I can see within",
+                    "90ft of our location.",
+                ]),
+                action : [["action", ""]],
+            },
+            "wicked deception": {
+                name : "Wicked Deception",
+                source : ["BHMC", 36],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [3 Ferocity]" + desc([
+                    "As an action, target creature within 30ft of me must succeed on a Wis save or view me",
+                    "and my companion as friends until the end of my next turn or my companion or I attack",
+                    "them. While affected, the target can't attack or otherwise harm me or my companion.",
+                    "Creatures that are immune to charm are unaffected.",
+                ]),
+                action : [["action", ""]],
+            },
+            "brimstone teleport": {
+                name : "Brimstone Teleport",
+                source : ["BHMC", 38],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [8 Ferocity]" + desc([
+                    "As an action, teleport to a space within 30ft of my current location that I can see.",
+                    "Each creature within 5ft of the space I left and the space I arrive at must make a Dex",
+                    "save or take 4d6 fire damage, half on a successful save. The damage increases to 5d6 at",
+                    "level 17.",
+                ]),
+                action : [["action", ""]],
+            },
+            "chains from hell": {
+                name : "Chains from Hell",
+                source : ["BHMC", 38],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [8 Ferocity]" + desc([
+                    "As an action, cause fiery chains to wrap around 3 targets I can see within 30ft of me.",
+                    "Each target must succeed on a Dex save or take 4d6 fire damage and be restrained until",
+                    "the end of my next turn. On a successful save,target takes half damage and aren't ",
+                    "restrained. The damage increases to 5d6 at level 17.",
+                ]),
+                action : [["action", ""]],
+            },
+            "dark of hell": {
+                name : "Dark of Hell",
+                source : ["BHMC", 38],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [8 Ferocity]" + desc([
+                    "As an action, cause my companion to radiate a 10ft radius of magical darkness (as per ",
+                    "the Darkness spell) until the end of my next turn. The darkenss moves with my companion. ",
+                    "My companion and I can see through the darkness.",
+                ]),
+                action : [["action", ""]],
+            },
+            "infernal flames": {
+                name : "Infernal Flames",
+                source : ["BHMC", 38],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [8 Ferocity]" + desc([
+                    "As an action, a burst of flame erupts from my companion. Each creature within 20ft of ",
+                    "my companion must make a Dex save or take 4d10 fire damage, half on a successful save.",
+                    "My companion and I take no damage from the fire. The damage increases to 5d10 at level 17.",
+                ]),
+                action : [["action", ""]],
+            },
+            "poison rain": {
+                name : "Poison Rain",
+                source : ["BHMC", 38],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "infernal bond";
+                },
+                description : " [8 Ferocity]" + desc([
+                    "As an action, cause a rain of poison to fall in a 20ft cube centered on a point within",
+                    "60ft of me. Each creature in the area must make a Con save or be poisoned until the end",
+                    "of my next turn. My companion and I are immune to this poison.",
+                ]),
+                action : [["action", ""]],    
+            },
+        },
+        "subclassfeature 7.0" : {
+            name : "Hell's Charmer",
+            source : ["BHMC", 38],
+            minlevel : 7,
+            description : desc([
+                "As an action, target a creature within 30ft that can see both my companion and I. Target must",
+                "succeed on a Wis save or be charmed by me and my companion for 10 minutes or until it is harmed",
+                "in any way by me or my allies. When the effect ends, the doesn't remember anything that", 
+                "occurred while it was charmed. If the target saves, they know that I tried to charm it",
+                "and becomes hostile to me and my companion. If we are fighting the target, it has advantage on", 
+                "the save.",
+            ]),
+            action : [["action", ""]],
+            usages : What('WisMod'),
+            recovery : "long rest",
+        },
+        "subclassfeature 11.0" : {
+            name : "Fiendish Traits",
+            source : ["BHMC", 38],
+            minlevel : 11,
+            description : desc([
+                "When I finish a long rest, I can choose one of the following traits for my companion: ",
+                "\n \u2022 Barbed Hide: When my companion is hit by a melee attack or grappled by a creature",
+                "   within 5ft of it the attacker takes 1d10 piercing damage.",
+                "\n \u2022 Fiendish Immunities: My companion gains immunity to fire, poison and the poisoned",
+                "   condition.",
+                "\n \u2022 Fiery Weapons: My companion's signature attack deals an extra 1d6 fire damage.",
+                "\n \u2022 Wings: My companion gains a 40ft flying speed. If it already has a flying speed,",
+                "   its flying speed increases by 40ft.",
+            ]),
+        },
+        "subclassfeature 15.0" : {
+            name : "Fiendish Form",
+            source : ["BHMC", 38],
+            minlevel : 15,
+            description : desc([
+                "As a bonus action, I can spend 6 ferocity to transform my companion into a fiendish form for",
+                "1 minute. While in this form, my companion gains the following benefits:",
+                "\n \u2022 Becomes a fiend",
+                "\n \u2022 It gains resistance to bludgeoning, piercing, and slashing damage.",
+                "\n \u2022 Gains advantage on saves vs spalls and other magical effects.",
+            ]),
+            action : [["bonus action", ""]],
+        },
+    },
+})
+
+/* --- Subclass: Primordial Bond --- */
+AddSubClass("beastheart", "primordial bond", {
+    regExpSearch : /^(?=.*primordial)(?=.*bond).*$/i,
+    subname : "Primordial Bond",
+    source : ["BHMC", 39],
+    features : {
+        "subclassfeature 3.1" : {
+            name: "Nature Exploits",
+            source : ["BHMC", 39],
+            minlevel : 3,
+            description : desc([
+                'Use the "Choose Feature" button above to add Nature Exploits to the third page',
+                "Whenever I gain a Beastheart level, I can replace an exploit I know with another.",
+            ]),
+            additional: levels.map(function (n) {
+                return n < 3 ? "" : (n < 11 ? 1 : 2) + " Nature Exploits known";
+            }),
+            extraname : "Nature Exploit",
+            extrachoices : ["Elemental Shield", "Freezing Strike", "Sickening Strike", "Wings When I Need Them", "Lava Geyser", "Lightning Eruption", "Plant Prison", "Stinging Swarm", "Thunderous Rebuke"],
+            extratimes : levels.map(function (n) {
+                return n < 3 ? 0 : n < 11 ? 1 : 2;
+            }),
+            "elemental shield": {
+                    name : "Elemental Shield",
+                    source : ["BHMC", 38],
+                    minlevel : 3,
+                    prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [3 Ferocity]" + desc([
+                    "As a reaction, give a creature I can see within 30ft of me resistance to one damage type",
+                    "(acid, cold, fire, lightning, or thunder) until the end of my next turn when hit by that",
+                    "damage type.",
+                ]),
+                action : [["reaction", ""]],
+            },
+            "freezing strike": {
+                name : "Freezing Strike",
+                source : ["BHMC", 39],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [2 Ferocity]" + desc([
+                    "When I hit a target with a weapon attack using the Attack action, the target takes an",
+                    "extra 1d6 cold damage and its speed is reduced by 10ft until the start of my next turn.",
+                    "The extra damage increases to 2d6 at level 5, 3d6 at level 11, and 4d6 at level 17.",
+                ]),
+            },
+            "sickening strike": {
+                name : "Sickening Strike",
+                source : ["BHMC", 39],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [3 Ferocity]" + desc([
+                    "When I hit a target with a weapon attack using the Attack action, the target must succeed",
+                    "on a Con save or become poisoned until the start of my next turn.",
+                ]),
+            },
+            "wings when i need them": {
+                name : "Wings When I Need Them",
+                source : ["BHMC", 39],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 3 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [5 Ferocity]" + desc([
+                    "At the start of my turn, when my companion gains ferocity and doesn't rampage, either",
+                    "my companion or I gains a flying speed equal to my walking speed until the start of my",
+                    "next turn.",
+                ]),
+            },
+            "lava geyser": {
+                name : "Lava Geyser",
+                source : ["BHMC", 39],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [8 Ferocity]" + desc([
+                    "As an action, summon a cylinder of gushing lava 10ft high with a 5ft radius. Each creature ",
+                    "in the area must succeed on Dex save or take 4d6 fire damage and is knocked prone. On a ",
+                    "success, targets take half damage and aren't knocked prone. The lavea dissolves into a fiery",
+                    "mist. The damage increases to 5d6 at level 17.",
+                ]),
+                action : [["action", ""]],
+            },
+            "lightning eruption": {
+                name : "Lightning Eruption",
+                source : ["BHMC", 39],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [8 Ferocity]" + desc([
+                    "When I hit a creature with a weapon attack, deal 5d6 lightning damage. Choose another",
+                    "target within 30ft of the original target, it must make a Dex save or take 5d6 lightning",
+                    "damage, half on a save. The damage increases to 6d6 at level 17.",
+                ]),
+            },
+            "plant prison": {
+                name : "Plant Prison",
+                source : ["BHMC", 39],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [5 Ferocity]" + desc([
+                    "As an action, thorny vines wrap around target within 30ft. Target must make Dex save or",
+                    "take 4d6 piercing damage and is restrained until the start of my next turn. Successful",
+                    "save means half damage and target isn't restrained. The damage increases to 5d6 at level 17.",
+                ]),
+                action : [["action", ""]],
+            },
+            "stinging swarm": {
+                name : "Stinging Swarm",
+                source : ["BHMC", 41],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [6 Ferocity]" + desc([
+                    "As an action, conjure a swarm f stinging insects in a 30ft line that is 5ft wide. Each",
+                    "creature in the line must make a Con save or take 4d6 piercing damage, and half as much",
+                    "on a success. My companion is unaffected by the insects. The damage increases to 5d6 at",
+                    "level 17.",
+                ]),
+                action : [["action", ""]],
+            },
+            "thunderous rebuke": {
+                name : "Thunderous Rebuke",
+                source : ["BHMC", 41],
+                prereqeval : function (v) {
+                    return classes.known.beastheart.level >= 11 && classes.known.beastheart.subclass === "primordial bond";
+                },
+                description : " [6 Ferocity]" + desc([
+                    "When my companion or I are hit by a melee attack from a creaqture within 5 ft, I can",
+                    "use my reaction to force the attacker to make a Con save or take 3d6 thunder damage and",
+                    "be pushed back 10ft. On a success, the attacker takes half as much and is not pushed back.",
+                    "The damage increases to 4d6 at level 17.",
+                ]),
+                action : [["reaction", ""]],
+            },
+        },
+        "subclassfeature 3.2" : {
+            name : "Primal Understanding",
+            source : ["BHMC", 41],
+            minlevel : 3,
+            description : desc([
+                "I gain proficiency in Nature, if I don't have it already. I can also speak, write and understand",
+                "Primordial and Sylvan"
+            ]),
+            skills : ["nature"],
+            languagesProfs : ["Primordial", "Sylvan"],
+        },
+        "subclassfeature 7.0" : {
+            name : "Allied Earth",
+            source : ["BHMC", 41],
+            minlevel : 7,
+            description : desc([
+                "As long as my companion has at least 1 ferocity, all ground within 10ft of it is difficult terrain",
+                "for its enemies",
+            ]),
+        },
+        "subclassfeature 11.0" : {
+            name : "Spirit Stampede",
+            source : ["BHMC", 41],
+            minlevel : 11,
+            description : desc([
+                "When my companion enters a rampage, all creatures of your choice within 30ft take force damage equal",
+                "to my companion's ferocity.",
+            ]),
+        },
+        "subclassfeature 15.0" : {
+            name : "Allied Weather",
+            source : ["BHMC", 41],
+            minlevel : 15,
+            description : desc([
+                "When my companion is hit by a melee attack by a creature within 10ft of it, and it has at least 1",
+                "ferocity, one of the following effects occurs (my choice):",
+                "\n \u2022 Attacker must make a Str save or be knocked prone",
+                "\n \u2022 Attacker must make a Dex save or take lightning damage equal to my companion's ferocity",
+            ]),
+        },
+    },
+})
+
+
 AddSubClass("beastheart", "protector bond", {
     regExpSearch : /protector/i,
     subname : "Protector Bond",
     source : ["BHMC", 27],
     features : {
-        "feature_7_protector_beast_vitality" : {
+        "subclassfeature 3.1" : {
             name : "Beast Vitality",
             minlevel : 3,
             description : desc([
@@ -1969,7 +2768,7 @@ AddSubClass("beastheart", "protector bond", {
                 }
             }
         },
-        "feature_8_protector_pack_phalanx" : {
+        "subclassfeature 3.1" : {
             name : "Pack Phalanx",
             minlevel : 3,
             description : desc([
@@ -1977,14 +2776,14 @@ AddSubClass("beastheart", "protector bond", {
                 "disadvantage on attack rolls against targets that are not myself or my companion."
             ])
         },
-        "feature_12_protector_thickened_hide" : {
+        "subclassfeature 7.0" : {
             name : "Thickened Hide",
             minlevel : 7,
             description : desc([
                 "Your companion's natural defenses improve, granting it +2 AC."
             ])
         },
-        "feature_15_protector_sentinel_companion" : {
+        "subclassfeature 11.0" : {
             name : "Sentinel Companion",
             minlevel : 11,
             description : desc([
@@ -1993,7 +2792,7 @@ AddSubClass("beastheart", "protector bond", {
                 "that creature."
             ])
         },
-        "feature_18_protector_undying_protector" : {
+        "subclassfeature 15.0" : {
             name : "Undying Protector",
             minlevel : 15,
             description : desc([
