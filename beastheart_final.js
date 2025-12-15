@@ -1902,7 +1902,8 @@ ClassList["beastheart"] = {
                             if (fields.Description.indexOf(tag) !== -1) return;
 
                             fields.Description += (fields.Description ? "; " : "") + tag;
-                    ]}]
+                        }
+                    ]
                 }
             }
         },
