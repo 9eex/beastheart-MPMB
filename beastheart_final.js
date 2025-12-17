@@ -141,10 +141,6 @@ var BeastheartCompanionKey = "";
             compDescription : "is a multilegged, reptilian horror whose deadly gaze transforms victims into stone.",
             compBaseTraitName : "Heavy Glare",
             compBaseTraitDesc : "When I hit a target that the basilisk\n  can see, the target must make a Con save or it can't\n  make opportunity attacks and its speed is reduced by\n  10ft until the start of its next turn.",
-            compMysticConn : "You cover your skin in a flexible layer of stone for 10 minutes. You gain resistance to bludgeoning, piercing, and slashing damage.",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'blood hawk': {
             compName : "Blood Hawk",
@@ -178,10 +174,6 @@ var BeastheartCompanionKey = "";
             compBaseTraitDesc : "If I am within 30ft of\n  hawk and get hit by an attack, the hawk can fly to me\n  without provoking opportunity attacks. If it ends its\n  move within 5ft of me, it takes the hit instead, but only\n  takes half damage.",
             compBaseFeatureName : "",
             compBaseFeatureDesc : "",
-            compMysticConn : "You gain a flying speed equal to your walking speed for 1 hour.",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'bulette': {
             compName : "Bulette",
@@ -215,10 +207,6 @@ var BeastheartCompanionKey = "";
             compBaseTraitDesc : "I can ride the bulette while it is\n  burrowing.",
             compBaseFeatureName : "",
             compBaseFeatureDesc : "",
-            compMysticConn : "You gain a burrowing speed equal to your walking speed for 10 minutes.",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "short or long rest"
         },
         'deinonychus': {
             compName : "Deinonychus",
@@ -253,10 +241,6 @@ var BeastheartCompanionKey = "";
             compBaseTraitDesc : "If I am charmed, stunned,\n  or frightened, and within 5ft of deinonychus, it can end\n  one of those conditions.",
             compBaseFeatureName : "",
             compBaseFeatureDesc : "",
-            compMysticConn : "You can take the Hide action as a bonus action",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "Wis mod",
-            compMysticConnPer : "long rest"
         },
         'dragon wyrmling': {
             compSize : 3,
@@ -284,9 +268,6 @@ var BeastheartCompanionKey = "";
             comp5thLevelTraitDesc : "",
             compDescription : "is little more than a baby, barely able to speak. However, they can\n   present a clear threat to any would-be predator.",
             compBaseFeatureName : "Shared Resistance",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'earth elemental': {
             compName : "Earth Elemental",
@@ -320,11 +301,7 @@ var BeastheartCompanionKey = "";
             compBaseTraitDesc : "If I am within 5ft, elemental can hurl me 5ft x\n  PB in any direction (including up). If I would normally\n  take damage from landing, they can make a DC15 Dex\n  save to take none.",
             compBaseFeatureName : "Earth Glide",
             compBaseFeatureDesc : "The elemental can burrow\n  through nonmagical, unworked earth and\n  stone and doesn't disturb the material it\n  moves through. While using Earth Glide,\n the elemental can't be used as a mount.",
-            compMysticConn : "You can transform your body into dirt and stone for 10 minutes. While transformed, you can pass through non-magical objects made of earth and stone. If you end your turn inside an object, you take 1d10 force damage and are shunted back to the space which you entered the object.",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
-        },
+         },
         'gelatinous cube': {
             compName : "Gelatinous Cube",
             compSize : 2,
@@ -357,10 +334,6 @@ var BeastheartCompanionKey = "";
             compBaseFeatureDesc : "I can enter and move\n  through the cube's space without\n  restriction or being engulfed and can\n  attack or interact with any engulfed\n  creature without taking damage from or\n  dealing damage to the cube.",
             compBaseFeature2Name : "Transparent",
             compBaseFeature2Desc : "When cube is in plain sight\n  and has not moved or attacked it can\n  only be spotted with a successful Wis\n  (Perception) check. Any unaware creature\n  that moves into the cube's space takes\n  1d6 acid damage and doesn't enter\n  cube's space.",
-            compMysticConn : "Your body becomes flexible and gelatinous for 10 minutes. While transformed, as a bonus action, you can absorb or excrete a tiny object into or out of your body. You can store up to 4 objects in this way. Also, when a creature within 5ft hits you with a melee attack, you can use your reaction to deal 3d6 acid damage to the attacker.",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'giant toad': {
             compName : "Giant Toad",
@@ -397,7 +370,6 @@ var BeastheartCompanionKey = "";
             compBaseFeatureDesc : "Toads can breathe both air\n  and water.",
             compBaseFeature2Name : "Standing Leap",
             compBaseFeature2Desc : "Toad can leap up to 20ft\n  long or 10ft high without a running start.",
-            compMysticConn : "You can can hold your breath for up to 1 hour and gain a swim speed equal to your walking speed. Additionally, you make high and long jumps as if you had a running start.",
         },
         'giant spider': {
             compName : "Giant Spider",
@@ -435,7 +407,6 @@ var BeastheartCompanionKey = "";
             compBaseFeature2Desc : "Spider knows the exact\n  location of any creature touching the\n  same web.",
             compBaseFeature3Name : "Web Walker",
             compBaseFeature3Desc : "Ignore any movement\n  restrictions caused by webs.",
-            compMysticConn : "You have advantage on initiative rolls and can't be surprised while you are not incapacitated.",
         },
         'giant weasel': {
             compName : "Giant Weasel",
@@ -471,10 +442,6 @@ var BeastheartCompanionKey = "";
             compBaseTraitDesc : "",
             compBaseFeatureName : "Treasure Sense",
             compBaseFeatureDesc : "Can detect gems and\n  precious metals within 10ft.",
-            compMysticConn : "as a bonus action, your teeth become pointed. For 1 minute, you can make bite attacks against targets within 5ft as a bonus action. Your bite is a natural weapon that uses either Str or Dex for attack and damage rolls and deals 1d10 piercing damage.",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'hell hound': {
             compName : "Hell Hound",
@@ -508,10 +475,6 @@ var BeastheartCompanionKey = "";
             compBaseTraitDesc : "",
             compBaseFeatureName : "Consult Hell (1/Long Rest)",
             compBaseFeatureDesc : "I can talk to\n  the Hell Hound, tapping into the Hell's\n  divinatory powers that mimic the Augury\n  spell. After a  minute, the hound will\n  respond with 1 bark for good results, 2\n  barks for bad results, 3 barks for both\n  good and bad results, and no barks for\n  results that aren't good or bad.",
-            compMysticConn : "You shroud yourself in fire for 10 minutes. Any creature within 5ft that touches you or hits you with a melee weapon attack for the first time in a turn 2d6 fire damage.",
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'mimic': {
             compName : "Mimic",
@@ -547,11 +510,6 @@ var BeastheartCompanionKey = "";
             compBaseFeatureDesc : "Mimic can use its action\n  to polymorph into an object or to their\n  true amorphous form. Any equipment\n  they are wearing or carrying doesn't\n  transform with them. Mimic reverts to its\n  true form when it dies. Mimic retains its\n  stats regardless of what form it takes.",
             compBaseFeature2Name : "False Appearance (Object Form Only)",
             compBaseFeature2Desc : "\n  Mimic appears to be an ordinary object\n  while in object form.",
-            compMysticConn : "as a bonus action, your teeth become pointed. For 1 minute, you can make bite attacks against targets within 5ft as a bonus action. Your bite is a natural weapon that uses either Str or Dex for attack and damage rolls and deals 1d10 piercing damage.",
-            compMysticConn : "As a bonus action, you can polymorph an item into any non-magical item of a similar size and weight whose value can't exceed the value of the original object. The object remains polymorphed until either: 1 hour has passed, you move mre than 30ft away, or you spend an action to end the polymorph." ,
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'owlbear': {
             compName : "Owlbear",
@@ -584,10 +542,6 @@ var BeastheartCompanionKey = "";
             compDescription : "is a monstrous cross between giant owl and bear, an owlbear's reputation for\n   ferocity and aggression makes it one of the most feared predators of the wild.",
             compBaseTraitName : "Give a Hoot (1/Long Rest)",
             compBaseTraitDesc : "Owlbear hoots a unique\n  battlecry. If I am able to hear it, I gain 5 x PB temporary\n  hit points.",
-            compMysticConn : "As an action, you can let out an inspiring hoot that gives each creature of your choice within 30ft, temporary hit points equal to your level." ,
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "long rest"
         },
         'sporeling': {
             compName : "Sporeling",
@@ -621,10 +575,6 @@ var BeastheartCompanionKey = "";
             compBaseTraitDesc : "While I am within 30ft\n  of Sporeling, it can use a bonus action to give me\n  advantage on saving throws for 1 minute.",
             compBaseFeatureName : "False Appearance",
             compBaseFeatureDesc : "If Sporeling remains\n  still, it is indistinguishable from an\n  ordinary fungus.",
-            compMysticConn : "When you hit a target with a weapon attack, you can infuse the attack with spores that impose disadvantage on the target's attack rolls until the end of their next turn." ,
-            compMysticConnAction : "bonus action",
-            compMysticConnUsage : "1",
-            compMysticConnPer : "short or long rest"
         },
         'worg': {
             compName : "Worg",
@@ -656,7 +606,6 @@ var BeastheartCompanionKey = "";
             compDescription : "is a monstrous wolf-like predator that delights in hunting and devouring\n  creatures weaker than itself.",
             compBaseTraitName : "Move As One",
             compBaseTraitDesc : "If I am mounted on Worg, opportunity\n  attacks against me or Worg are made with disadvantage.\n  I can mount or dismount Worg by spending 5ft of\n  movement.",
-            compMysticConn : "Your walking speed increases by 10ft.",
         },
     };
 
@@ -675,14 +624,11 @@ var BeastheartCompanionKey = "";
         t.comp1stLevelTraitDesc = "Wyrmling makes a signature\n  attack as a ranged attack with a normal range of 30ft\n  and a long range of 60ft. On hit, Spit Breath deals extra\n  PB " + d.damageType + " damage.";
         t.comp5thLevelTraitDesc = "Wyrmling breathes a\n  " + d.breathArea + " of " + d.damageType + ". All creatures caught in the\n  area must  make a " + d.breathSave + " save or take PBd6 damage and\n  half as much on success.";
         t.compBaseFeatureDesc = "I gain " + d.damageType + " resistance\n  due to my relationship with my wyrmling\n  companion. I also take no damage from\n  its Breath Attack.";
-        t.compMysticConn = "As a bonus action, you can imbue a weapon you hold\n  with draconic power for 10 minutes. While\n  imbued, attacks made with that weapon\n  deal an extra 1d10\n  " + d.damageType + " damage.";
         type = t; // use the injected version
     }
 
     // A few globals to make things a bit easier
     var lvl = Number(What("Classes.Beastheart.level")) || 0;
-    var wis = What("Wis Mod");
-    var sub = What("ClassSub.beastheart");
 
     // Give this type a stable key we can store globally
     var compKey = bhcomp;
@@ -832,17 +778,17 @@ var BeastheartCompanionKey = "";
         {
             name : "Beyond Instinct (Level 5)",
             minlevel : 5,
-            description : "Select a 3rd\n  saving throw and a new skill proficiency\n  for your companion.",
+            description : "Select an extra\n  saving throw and a new skill proficiency\n  for your companion.",
         },
         {
             name : "Beyond Instinct (Level 10)",
             minlevel : 10,
-            description : "Select a 4th\n  saving throw and a new skill proficiency\n for your companion.",
+            description : "Select a 2nd\n  extra saving throw and a new skill proficiency\n for your companion.",
         },
         {
             name : "Beyond Instinct (Level 15)",
             minlevel : 15,
-            description : "Select a 5th\n  saving throw and a new skill proficiency\n  for your companion.",
+            description : "Select a 3rd\n  extra saving throw and a new skill proficiency\n  for your companion.",
         }
     ],
     traits: [
@@ -917,7 +863,7 @@ var BeastheartCompanionKey = "";
 
         // Add Skill proficiencies
         var compSkills = Object.keys(CurrentCompRace[prefix].skills || {});
-        for (var i = 0; i < compSkills.length; i++) {
+         for (var i = 0; i < compSkills.length; i++) {
             var skillName = compSkills[i];
             var skillAbbr = skillMap[skillName] || skillName;
             var profFld = prefix + "Comp.Use.Skills." + skillAbbr + ".Prof";
@@ -926,10 +872,10 @@ var BeastheartCompanionKey = "";
             if (tDoc.getField(profFld)) {
             tDoc.getField(profFld).checkThisBox(0, true);
             }
-            if (What(modFld).indexOf("oProf") === -1) {
+            /* if (What(modFld).indexOf("oProf") === -1) {
             AddToModFld(modFld, "oProf", false, sNameEntity, sExplanation);
-            }
-        }
+            } */
+        } 
         // === Companion DCs: write into Attack 1 description ===
         var level = Number(What("Character Level")) || 0;
         var PB = Number(What("ProfBonus")) || (1 + Math.ceil(level / 4));
@@ -1045,23 +991,15 @@ ClassList["beastheart"] = {
             minlevel : 1,
             source : ["BHMC", 27],
             description : desc([
-                "My companion gains 1d4 ferocity + any extra ferocity, due to my level, at the start of my turn",
-                "and also gains +1 ferocity for each creature within 5ft they can see or hear."
+                "At the start of my turn, my companion gains 1d4 Ferocity and an extra +1 Ferocity for each",
+                "creature within 5 ft it can see or hear."
             ]),
             additional : levels.map(function (n) {
-                if (n < 5) return "";
-                var ferocity = "";
-                if (n > 14) {
-                    ferocity = "+5 ferocity";
-                }
-                else if (n > 9) {
-                    ferocity = "+3 ferocity";
-                }
-                else if (n > 4) {
-                    ferocity = "+1 ferocity";
-                }
-                return ferocity;
-            }),
+                if (n < 5) return "1d4 Ferocity";
+                if (n < 10) return "1d4 + 1 Ferocity";
+                if (n < 15) return "1d4 + 3 Ferocity";
+                return "1d4 + 5 Ferocity";
+            })
         },
         "feature_1_companion bond" : {
             name : "Companion Bond",
@@ -1434,7 +1372,7 @@ ClassList["beastheart"] = {
             }),
             extraname : "Primal Exploits",
             extrachoices : ["Aid Us, Friend", "Bring Them Down", "Drag Them", "Feral Reflexes", "Hurricane Blow", "No Escape", "Primal Pounce", "Quick Hide", "Thrash", "Crushing Charge", "Expanding Fury", "Furious Vengeance", "Marked Prey", "Primal Shout", "Wrath of the Pack", "Blood Sport", "Break the Earth", "Bury the Dead", "Imbue Projectile", "Rend", "Spirit Form"],
-            extrachoicesemax : levels.map(function (n) {
+            extraTimes : levels.map(function (n) {
                 return n < 2 ? "" : (n < 10 ? 3 : n < 17 ? 5 : 7);
             }),
             "aid us, friend": {
@@ -1727,9 +1665,23 @@ ClassList["beastheart"] = {
             description : desc([
                 "I gain proficiency in Animal Handling. If I have proficiency, my proficiency bonus is doubled."
             ]),
-            skillstxt : "Animal Handling|expertise",
+            eval : function () {
+                var profs = What("ProfSkills");
+                var hasAni = profs && profs.indexOf("Ani") !== -1;
+
+                if (hasAni) {
+                    // already proficient → expertise
+                    AddSkillProf("Ani", true, true);
+                } else {
+                    // not proficient → proficiency only
+                    AddSkillProf("Ani", true, false);
+                }
+            },
+            removeeval : function () {
+                AddSkillProf("Ani", false, false);
+            }
         },
-      "feature_5_beyond_instinct" : {
+        "feature_5_beyond_instinct" : {
             name : "Beyond Instinct",
             source : ["BHMC", 30],
             minlevel : 5,
@@ -1801,7 +1753,6 @@ ClassList["beastheart"] = {
                     ]
                 }
             },
-
             "cold" : {
                 name : "Cold",
                 description : "\n  My Primal Strikes deal cold damage.",
@@ -1822,7 +1773,6 @@ ClassList["beastheart"] = {
                     ]
                 }
             },
-
             "fire" : {
                 name : "Fire",
                 description : "\n  My Primal Strikes deal fire damage.",
@@ -1843,7 +1793,6 @@ ClassList["beastheart"] = {
                     ]
                 }
             },
-
             "lightning" : {
                 name : "Lightning",
                 description : "\n  My Primal Strikes deal lightning damage.",
@@ -1864,7 +1813,6 @@ ClassList["beastheart"] = {
                     ]
                 }
             },
-
             "poison" : {
                 name : "Poison",
                 description : "\n  My Primal Strikes deal poison damage.",
@@ -1885,7 +1833,6 @@ ClassList["beastheart"] = {
                     ]
                 }
             },
-
             "thunder" : {
                 name : "Thunder",
                 description : "\n  My Primal Strikes deal thunder damage.",
@@ -2224,8 +2171,8 @@ ClassList["beastheart"] = {
             description : desc([
                 "While my companion is on at least 1 hp and can see and hear me, I can choose to succeed on",
                 "Animal Handling checks to prevent my companion from entering rampage, and my",
-                "companion gains 1d10 ferocity when they roll for initiative. Furthermore,if my companion is",
-                "reduced to 0hp but not killed outright, they drop to 1h if my companion isp instead."
+                "companion gains 1d10 ferocity when they roll for initiative. Furthermore, if my companion is",
+                "reduced to 0 hit points but not killed outright, they drop to 1h if my companion is instead."
             ])
         }
     }
@@ -2243,8 +2190,8 @@ AddSubClass("beastheart", "ferocious bond", {
             source : ["BHMC", 32],
             minlevel : 3,
             description : desc([
-                "As a reaction to when my companion enters rampage, I can move up to 30ft then make a melee",
-                "weapon attack.",
+                "As a reaction to when my companion enters rampage, I can move up to 30ft then make a",
+                "melee weapon attack.",
             ]),
             action : ["reaction", ""],
         },
@@ -2253,11 +2200,24 @@ AddSubClass("beastheart", "ferocious bond", {
             source : ["BHMC", 33],
             minlevel : 3,
             description : desc([
-                "I gain proficiency in Intimidation if I do not already have it.",
-                "Additionally, I add my Wisdom modifier to Charisma (Intimidation) checks."
+                "I gain proficiency in Intimidation if I do not already have it. Additionally, I can add my Wis", 
+                "modifier to Cha (Intimidation) checks."
             ]),
-            eval : "AddSkillProf('Intimidation', true, false); AddSkillExtra('Intimidation', 'wis');",
-            removeeval : "RemoveSkillProf('Intimidation', true, false); RemoveSkillExtra('Intimidation', 'wis');"
+            eval : function () {
+                var profs = What("ProfSkills");
+                var hasIntimidation = profs && profs.indexOf("Inti") !== -1;
+
+                if (hasIntimidation) {
+                    // already proficient → expertise
+                    AddSkillProf("Inti", true, true);
+                } else {
+                    // not proficient → proficiency only
+                    AddSkillProf("Inti", true, false);
+                }
+            },
+            removeeval : function () {
+                AddSkillProf("Inti", false, false);
+            }
         },
         "ferociousfeature 7.0" : {
             name : "Energizing Rampage",
@@ -2284,10 +2244,9 @@ AddSubClass("beastheart", "ferocious bond", {
             source : ["BHMC", 34],
             minlevel : 15,
             description : desc([
-                "When my companion hits a creature with a signature attack during rampage, or if I",
-                "hit a creature after using Frenzied Charge, the target becomes either blinded, ",
-                "deafened or frightened (my choice) of the attacker until the end of the target's",
-                "next turn",
+                "When my companion hits a creature with a signature attack during rampage, or if I hit a",
+                "creature after using Frenzied Charge, the target becomes either blinded, deafened or",
+                "frightened (my choice) of the attacker until the end of the target's next turn"
             ]),
         },
     },
@@ -2319,8 +2278,21 @@ AddSubClass("beastheart", "hunter bond", {
                 "My proficiency bonus is doubled for any ability check I make using Survival.",
                 "I can use Survival instead of Insight when I make a Wisdom check to read a creature's intentions or discern if a creature is lying."
             ]),
-            eval : "AddSkillProf('Survival', true, false); AddSkillExpertise('Survival', true);",
-            removeeval : "RemoveSkillProf('Survival', true, false); RemoveSkillExpertise('Survival', true);"
+            eval : function () {
+                var profs = What("ProfSkills");
+                var hasSurvival = profs && profs.indexOf("Sur") !== -1;
+
+                if (hasSurvival) {
+                    // already proficient → expertise
+                    AddSkillProf("Sur", true, true);
+                } else {
+                    // not proficient → proficiency only
+                    AddSkillProf("Sur", true, false);
+                }
+            },
+            removeeval : function () {
+                AddSkillProf("Sur", false, false);
+            }
         },
         "hunterfeature 7.0" : {
             name : "Primal Warding",
@@ -2330,10 +2302,10 @@ AddSubClass("beastheart", "hunter bond", {
                 "As an action, create a 10ft square trap on the ground centered on a point I can see within",
                 " 30ft of me. The trap lasts 8 hours. I can designate any number of creatures that are",
                 "unaffected by it. Finding the trap requires an Int (Investigation check. When any undesignated",
-                "creature enters the trap's area, it must make a Con save or take 4d8 damage and be blinded for",
-                "1 minute. On a save, it takes half damage and is not blinded. When triggered the trap mentally", 
-                "alerts me, waking me if I am asleep. I know which trap has been tripped if I have set more than",
-                "one. I can set a number of traps equal to my Wis modifier per long rest",
+                "creature enters the trap's area, it must make a Con save or take 4d8 damage and be blinded",
+                "for 1 minute. On a save, it takes half damage and is not blinded. When triggered the trap", 
+                "mentally alerts me, waking me if I am asleep. I know which trap has been tripped if I have set",
+                "more than one. I can set a number of traps equal to my Wis modifier per long rest",
             ]),
             action : [["action", ""]],
             usagescalc : "event.value = Math.max(1, What('Wis Mod'));",
@@ -2378,25 +2350,43 @@ AddSubClass("beastheart", "infernal bond", {
             minlevel : 3,
             description : desc([
                 "I gain proficiency in either Arcana or Religion, if I don't already have proficiency in either.", 
-                " Also, I can now speak, write and understand Infernal.",
+                "Also, I can now speak, write and understand Infernal.",
             ]),
-            skills : ["arcana", "religion"],
-            languages : ["Infernal"],
+            choices : ["Arcana", "Religion"],
+            "arcana" : {
+                name : "Arcana",
+                eval : function () {
+                    AddSkillProf("arc", true, false); 
+                },
+                removeeval : function () {
+                    RemoveSkillProf("arc", false, false);
+                },
+            },
+            "religion" : {
+                name : "Religion",
+                eval : function () {
+                    AddSkillProf("rel", true, false); 
+                },
+                removeeval : function () {
+                    RemoveSkillProf("rel", false, false);
+                },
+            },
+            languageProfs : ["Infernal"],
         },
         "infernalfeature 3.1" : {
             name : "Infernal Exploits",
             source : ["BHMC", 36],
             minlevel : 3,
             description : desc([
-                'Use the "Choose Feature" button above to add Infernal Exploits to the third page',
-                "Whenever I gain a Beastheart level, I can replace an exploit I know with another.",
+                'Use the "Choose Feature" button above to add Infernal Exploits to the third page. Whenever I',
+                "gain a Beastheart level, I can replace an exploit I know with another.",
             ]),
             additional: levels.map(function (n) {
                 return n < 3 ? "" : (n < 11 ? 1 : 2) + " Infernal Exploits known";
             }),
             extraname : "Infernal Exploits",
             extrachoices : ["Drain Them", "Hellish Wound", "Infernal Teleport", "Wicked Deception", "Brimstone Teleport", "Chains from Hell", "Dark of Hell", "Infernal Flames", "Poison Rain"],
-            extratimes : levels.map(function (n) {
+            extraTimes : levels.map(function (n) {
                 return n < 3 ? 0 : n < 11 ? 1 : 2;
             }),
             "drain them": {
@@ -2406,8 +2396,8 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 3;
                 },
                 description : " [4 Ferocity]" + desc([
-                    "When my companion hits a creature with their signature attack, I can use my ",
-                    "reaction to have my companion gain hit points equal to half the damage dealt.",
+                    "When my companion hits a creature with their signature attack, I can use my reaction to have",
+                    "my companion gain hit points equal to half the damage dealt.",
                 ]),
                 action : [["reaction", ""]],
             },
@@ -2418,11 +2408,11 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 3;
                 },
                 description : " [4 Ferocity]" + desc([
-                    "When my companion hits a no-construct, non-undead creature with an attack, I can",
-                    "to have my companion inflict a Hellish Wound (no action reqd). At the start of each",
-                    "of the target's turns, it loses 1d10 hit points for each Hellish Wound. The Hellish",
-                    "Wounds disappear if the target receives magical healing or if any creature uses and",
-                    "action to staunch the wounds with a successful Wis (Medicine) check vs my Exploit Save DC.",
+                    "When my companion hits a non-construct, non-undead creature with an attack, I can to have",
+                    "my companion inflict a Hellish Wound (no action reqd). At the start of each of the target's",
+                    "turns, it loses 1d10 hit points for each Hellish Wound. The Hellish Wounds disappear if the",
+                    "target receives magical healing or if any creature uses and action to staunch the wounds with",
+                    "a successful Wis (Medicine).",
                 ]),
                 action : [["reaction", ""]],
             },
@@ -2445,10 +2435,10 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 3;
                 },
                 description : " [3 Ferocity]" + desc([
-                    "As an action, target creature within 30ft of me must succeed on a Wis save or view me",
-                    "and my companion as friends until the end of my next turn or my companion or I attack",
-                    "them. While affected, the target can't attack or otherwise harm me or my companion.",
-                    "Creatures that are immune to charm are unaffected.",
+                    "As an action, target creature within 30ft of me must succeed on a Wis save or view me and",
+                    "my companion as friends until the end of my next turn or my companion or I attack them.",
+                    "While affected, the target can't attack or otherwise harm me or my companion. Creatures that",
+                    "are immune to charm are unaffected.",
                 ]),
                 action : [["action", ""]],
             },
@@ -2459,10 +2449,9 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 11;
                 },
                 description : " [8 Ferocity]" + desc([
-                    "As an action, teleport to a space within 30ft of my current location that I can see.",
-                    "Each creature within 5ft of the space I left and the space I arrive at must make a Dex",
-                    "save or take 4d6 fire damage, half on a successful save. The damage increases to 5d6 at",
-                    "level 17.",
+                    "As an action, teleport to a space within 30ft of my current location that I can see. Each",
+                    "creature within 5ft of the space I left and the space I arrive at must make a Dex save or take",
+                    "4d6 fire damage, half on a successful save. The damage increases to 5d6 at level 17."
                 ]),
                 action : [["action", ""]],
             },
@@ -2473,10 +2462,10 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 11;
                 },
                 description : " [8 Ferocity]" + desc([
-                    "As an action, cause fiery chains to wrap around 3 targets I can see within 30ft of me.",
-                    "Each target must succeed on a Dex save or take 4d6 fire damage and be restrained until",
-                    "the end of my next turn. On a successful save,target takes half damage and aren't ",
-                    "restrained. The damage increases to 5d6 at level 17.",
+                    "As an action, cause fiery chains to wrap around 3 targets I can see within 30ft of me. Each",
+                    "target must succeed on a Dex save or take 4d6 fire damage and be restrained until the end of",
+                    "my next turn. On a successful save,target takes half damage and aren't restrained. The",
+                    "damage increases to 5d6 at level 17.",
                 ]),
                 action : [["action", ""]],
             },
@@ -2487,9 +2476,9 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 11;
                 },
                 description : " [8 Ferocity]" + desc([
-                    "As an action, cause my companion to radiate a 10ft radius of magical darkness (as per ",
-                    "the Darkness spell) until the end of my next turn. The darkenss moves with my companion. ",
-                    "My companion and I can see through the darkness.",
+                    "As an action, cause my companion to radiate a 10ft radius of magical darkness (as per the",
+                    "Darkness spell) until the end of my next turn. The darkness moves with my companion. My",
+                    "companion and I can see through the darkness.",
                 ]),
                 action : [["action", ""]],
             },
@@ -2500,9 +2489,9 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 11;
                 },
                 description : " [8 Ferocity]" + desc([
-                    "As an action, a burst of flame erupts from my companion. Each creature within 20ft of ",
-                    "my companion must make a Dex save or take 4d10 fire damage, half on a successful save.",
-                    "My companion and I take no damage from the fire. The damage increases to 5d10 at level 17.",
+                    "As an action, a burst of flame erupts from my companion. Each creature within 20ft of my",
+                    "companion must make a Dex save or take 4d10 fire damage, half on a successful save. My",
+                    "companion and I take no damage from the fire. The damage increases to 5d10 at level 17.",
                 ]),
                 action : [["action", ""]],
             },
@@ -2513,9 +2502,9 @@ AddSubClass("beastheart", "infernal bond", {
                     return classes.known.beastheart.level >= 11;
                 },
                 description : " [8 Ferocity]" + desc([
-                    "As an action, cause a rain of poison to fall in a 20ft cube centered on a point within",
-                    "60ft of me. Each creature in the area must make a Con save or be poisoned until the end",
-                    "of my next turn. My companion and I are immune to this poison.",
+                    "As an action, cause a rain of poison to fall in a 20ft cube centered on a point within 60ft of",
+                    "me. Each creature in the area must make a Con save or be poisoned until the end of my next",
+                    "turn. My companion and I are immune to this poison.",
                 ]),
                 action : [["action", ""]],    
             },
@@ -2526,11 +2515,10 @@ AddSubClass("beastheart", "infernal bond", {
             minlevel : 7,
             description : desc([
                 "As an action, target a creature within 30ft that can see both my companion and I. Target must",
-                "succeed on a Wis save or be charmed by me and my companion for 10 minutes or until it is harmed",
-                "in any way by me or my allies. When the effect ends, the doesn't remember anything that", 
-                "occurred while it was charmed. If the target saves, they know that I tried to charm it",
-                "and becomes hostile to me and my companion. If we are fighting the target, it has advantage on", 
-                "the save.",
+                "make a Wis save or be charmed by me and my companion for 10 minutes or until it is harmed",
+                "by me or my allies. When the effect ends, the doesn't remember anything that occurred while", 
+                "it was charmed. If the target saves, they know that I tried to charm it and becomes hostile to",
+                "me and my companion. If we are fighting the target, it has advantage on the save."
             ]),
             action : [["action", ""]],
             usages : What('WisMod'),
@@ -2542,13 +2530,13 @@ AddSubClass("beastheart", "infernal bond", {
             minlevel : 11,
             description : desc([
                 "When I finish a long rest, I can choose one of the following traits for my companion: ",
-                "\n \u2022 Barbed Hide: When my companion is hit by a melee attack or grappled by a creature",
+                "\u2022 Barbed Hide: When my companion is hit by a melee attack or grappled by a creature",
                 "   within 5ft of it the attacker takes 1d10 piercing damage.",
-                "\n \u2022 Fiendish Immunities: My companion gains immunity to fire, poison and the poisoned",
+                "\u2022 Fiendish Immunities: My companion gains immunity to fire, poison and the poisoned",
                 "   condition.",
-                "\n \u2022 Fiery Weapons: My companion's signature attack deals an extra 1d6 fire damage.",
-                "\n \u2022 Wings: My companion gains a 40ft flying speed. If it already has a flying speed,",
-                "   its flying speed increases by 40ft.",
+                "\u2022 Fiery Weapons: My companion's signature attack deals an extra 1d6 fire damage.",
+                "\u2022 Wings: My companion gains a 40ft flying speed. If it already has a flying speed,",
+                "   its flying speed increases by 40ft."
             ]),
         },
         "infernalfeature 15.0" : {
@@ -2557,14 +2545,13 @@ AddSubClass("beastheart", "infernal bond", {
             minlevel : 15,
             description : desc([
                 "As a bonus action, I can spend 6 ferocity to transform my companion into a fiendish form for",
-                "1 minute. While in this form, my companion gains the following benefits:",
-                "\n \u2022 Becomes a fiend",
-                "\n \u2022 It gains resistance to bludgeoning, piercing, and slashing damage.",
-                "\n \u2022 Gains advantage on saves vs spalls and other magical effects.",
+                "1 minute. While in this form, my companion's type changes to Fiend, gains resistance to",
+                "bludgeoning, piercing, and slashing damage and gains advantage on saves vs spalls and",
+                "other magical effects."
             ]),
-            action : [["bonus action", ""]],
-        },
-    },
+            action : [["bonus action", ""]]
+        }
+    }
 })
 
 /* --- Subclass: Primordial Bond --- */
@@ -2586,14 +2573,14 @@ AddSubClass("beastheart", "primordial bond", {
             }),
             extraname : "Nature Exploit",
             extrachoices : ["Elemental Shield", "Freezing Strike", "Sickening Strike", "Wings When I Need Them", "Lava Geyser", "Lightning Eruption", "Plant Prison", "Stinging Swarm", "Thunderous Rebuke"],
-            extratimes : levels.map(function (n) {
+            extraTimes : levels.map(function (n) {
                 return n < 3 ? 0 : n < 11 ? 1 : 2;
             }),
             "elemental shield": {
-                    name : "Elemental Shield",
-                    source : ["BHMC", 38],
-                    minlevel : 3,
-                    prereqeval : function (v) {
+                name : "Elemental Shield",
+                source : ["BHMC", 38],
+                minlevel : 3,
+                prereqeval : function (v) {
                     return classes.known.beastheart.level >= 3;
                 },
                 description : " [3 Ferocity]" + desc([
@@ -2714,7 +2701,12 @@ AddSubClass("beastheart", "primordial bond", {
                 "I gain proficiency in Nature, if I don't have it already. I can also speak, write and understand",
                 "Primordial and Sylvan"
             ]),
-            skills : ["nature"],
+            eval : function () {
+                    AddSkillProf("nat", true, false); 
+                },
+                removeeval : function () {
+                    RemoveSkillProf("arc", false, false);
+                },
             languagesProfs : ["Primordial", "Sylvan"],
         },
         "primordialfeature 7.0" : {
@@ -2742,8 +2734,8 @@ AddSubClass("beastheart", "primordial bond", {
             description : desc([
                 "When my companion is hit by a melee attack by a creature within 10ft of it, and it has at least 1",
                 "ferocity, one of the following effects occurs (my choice):",
-                "\n \u2022 Attacker must make a Str save or be knocked prone",
-                "\n \u2022 Attacker must make a Dex save or take lightning damage equal to my companion's ferocity",
+                "\u2022 Attacker must make a Str save or be knocked prone",
+                "\u2022 Attacker must make a Dex save or take lightning damage equal to my companion's ferocity",
             ]),
         },
     },
