@@ -4,18 +4,17 @@ RequiredSheetVersion('13');
 
 /* ==== INFORMATION =======================================	
     Subject:	Class and Subclasses
-    Effect:		This script adds the Beastheart class, 
-                developed by MCDM (mcdmproductions.com).
-    Code by:	G33x
+    Effect:		This script adds the Beastheart class, developed by MCDM (mcdmproductions.com).
+    Code by:	G.X.
     Date:		2025-10-04 (sheet v13.x.x)
-    Notes:		This file adds optional material to "MPMB's 
-                Character Record Sheet" found at 
+    Notes:		This file adds optional material to "MPMB's Character Record Sheet" found at 
                 https://flapkan.com/mpmb/charsheets
 
-                It is recommended to enter the code in a 
-                fresh sheet before adding any other 
-                information (i.e. before making your 
-                character with it).
+                It is recommended to enter the code in a fresh sheet before adding any other 
+                information (i.e. before making your character with it).
+    Legal Note: This script is provided "as is" without warranty of any kind. This class and
+                associated materials are copyright of MCDM Productions. You must own a legal
+                copy of the material before using this script.
 ======================================================== */
 /* ==== SOURCE ========================================= */
 SourceList["BHMC"] = {
@@ -28,9 +27,10 @@ SourceList["BHMC"] = {
 
 
 /*  DEBUGGING
-    Acrobat error offset ≈ +2600 lines
+    Acrobat error offset = +2600 lines
    (i.e. Acrobat line 2756 = real line 156)
 */
+
 /* --------------------------------------------------------
    Beastheart and Monstrous Companions (MCDM)
    Custom Class & Companion Add-On for MPMB Character Sheet
